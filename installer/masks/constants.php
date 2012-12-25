@@ -35,6 +35,5 @@ defined( 'TP' )							or define('TP' , '{dbprefix}'); // defines the table prefi
 /* Always provide a TRAILING SLASH (/) AFTER A PATH */
 defined( 'BASE_URL' )					or define( 'BASE_URL', '{siteurl}');
 defined( 'SITE_TITLE' )					or define( 'SITE_TITLE', '{sitetitle}' );
-defined( 'TFORUM_VERSION' )				or define( 'TFORUM_VERSION', '{version}');
 defined( 'ADMIN_SLUG' )					or define( 'ADMIN_SLUG', '');
 defined( 'LOGIN_SLUG' )					or define( 'LOGIN_SLUG', '');

@@ -33,3 +33,5 @@ for this.
 
 * version 0.1.BETA-1 (2012.12.25) - Initial commit with README.md
 * version 0.1.BETA-1 (2012.12.25) - All files and installer uploaded
+* version 0.2.BETA (2012.12.25) - Fixed issue with lists in forum posts, moved version constant to index.php, and 
+updated versioning.

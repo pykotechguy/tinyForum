@@ -73,7 +73,7 @@
 <div class="page_navigation floatright"></div><!-- /.floatright -->
 <ul class="posts content">
 <?php foreach( $this->topic as $key => $value ) { ?>
-<li>
+<li class="list">
 <!-- /.Start of first thread post -->
 	<div class="box02 content">
 		<div class="cols2 clearfix">

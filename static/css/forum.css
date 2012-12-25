@@ -481,7 +481,10 @@ padding:0px 8px;
 }
 
 ul.content {margin:0;padding:0;}
-ul.content li {list-style:none;}
+
+ul.content li {margin-bottom:.5em;}
+
+ul li.list {list-style:none;}
 
 .page_navigation , .alt_page_navigation{width:auto;float:right; border:solid 1px #cecfd1;background:#fff;height:22px;line-height:22px;}
 

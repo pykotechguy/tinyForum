@@ -36,6 +36,7 @@ defined( 'LOCALE_DIR' ) 		or define( 'LOCALE_DIR', SYS_PATH . 'Locale' );
 defined( 'DEFAULT_LOCALE' )		or define( 'DEFAULT_LOCALE', '');
 defined( 'ENCODING' )			or define( 'ENCODING', 'UTF-8');
 defined( 'CURRENT_VERSION' )	or define( 'CURRENT_VERSION', '0.4');
+defined( 'TFORUM_VERSION' )		or define( 'TFORUM_VERSION', '0.2.BETA');
 require( SYS_PATH . 'Config/constants.php');
 require( SYS_PATH . 'application.php');
 

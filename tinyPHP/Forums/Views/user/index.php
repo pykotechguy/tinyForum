@@ -25,7 +25,7 @@
 <!-- /.Start of threads -->
 <div class="posts" id="pages">
 <ul class="posts content">
-<li>
+<li class="list">
 <!-- /.Start of first thread post -->
 	<div class="box02 content">
 		<div class="cols2 clearfix">
