@@ -22,6 +22,17 @@ require( SYS_PATH . DS . 'Classes' . DS . 'Autoloader.php');
 $loader = new \tinyPHP\Classes\Autoloader('tinyPHP\Classes',BASE_PATH);
 $loader->register();
 
+/** Check if environment is development and display errors */
+if (DEVELOPMENT_ENVIRONMENT == TRUE) {
+	error_reporting(E_ALL | E_STRICT);
+	ini_set('display_errors','On');
+} else {
+	error_reporting(E_ALL | E_STRICT);
+	ini_set('display_errors','Off');
+	ini_set('log_errors', 'On');
+	ini_set('error_log', BASE_PATH . 'tmp' . DS . 'logs' . DS . 'error.' . date('m-d-Y') . '.txt');
+}
+
 require( SYS_PATH . 'Config/helper.php' );
 
 

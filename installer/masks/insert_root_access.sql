@@ -1,5 +1,5 @@
-INSERT INTO `{dbprefix}users` (`user_id`, `username`, `password`, `first_name`, `email`, `role`, `active`) 
-VALUES (NULL, '{admin_username}', '{admin_password}', '{admin_realname}', '{admin_email}', 'Administrator', '1');
+INSERT INTO `{dbprefix}users` (`user_id`, `username`, `password`, `first_name`, `email`, `role`, `active`, `regdate`) 
+VALUES (NULL, '{admin_username}', '{admin_password}', '{admin_realname}', '{admin_email}', 'Administrator', '1', '2012-12-25 14:00:00');
 
 INSERT INTO `{dbprefix}options` (`option_id`, `option_name`, `option_value`) VALUES(1, 'admin_email', '{admin_email}');
 

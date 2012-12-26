@@ -482,7 +482,7 @@ padding:0px 8px;
 
 ul.content {margin:0;padding:0;}
 
-ul.content li {margin-bottom:.5em;}
+ul.content .detail li {margin-bottom:.5em;}
 
 ul li.list {list-style:none;}
 
