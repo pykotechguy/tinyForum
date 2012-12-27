@@ -97,6 +97,90 @@
 		return $hook->apply_filter('user_avatar', $avatar, $email, $size);
 	}
 
+	function whoIsOnline() {
+		$db = new \tinyPHP\Classes\Core\MySQLiDriver();
+		$db->conn();
+		
+		$sql = $db->query( "SELECT COUNT(user_id) FROM " . TP . "users WHERE NOT auth_token = 'NULL' AND NOT auth_token = ''" );
+		$r = $sql->fetch_array();
+		if($r['COUNT(user_id)'] == 1) {
+			return _t( 'There is currently ') . '<a href="#">' . $r['COUNT(user_id)'] . _t( ' User Online' ) . '</a>';
+		} else {
+			return _t( 'There are currently ') . '<a href="#">' . $r['COUNT(user_id)'] . _t( ' Users Online' ) . '</a>';
+		}
+	}
+	
+	function isUserOnline($username) {
+		$db = new \tinyPHP\Classes\Core\MySQLiDriver();
+		$db->conn();
+		
+		$sql = $db->query( "SELECT username,auth_token FROM " . TP . "users WHERE username = '$username' AND NOT auth_token = 'NULL' AND NOT auth_token = ''" );
+		if($sql->num_rows > 0) {
+			return '<span class="online">Online</span>';
+		} else {
+			return '<span class="offline">Offline</span>';
+		}
+	}
+	
+	function threadCount() {
+		$db = new \tinyPHP\Classes\Core\MySQLiDriver();
+		$db->conn();
+		
+		$sql = $db->query( "SELECT COUNT(topic_id) FROM " . TP . "topics" );
+		$r = $sql->fetch_array();
+		return $r['COUNT(topic_id)'];
+	}
+	
+	function postCount() {
+		$db = new \tinyPHP\Classes\Core\MySQLiDriver();
+		$db->conn();
+		
+		$sql = $db->query( "SELECT COUNT(post_id) FROM " . TP . "posts" );
+		$r = $sql->fetch_array();
+		return $r['COUNT(post_id)'];
+	}
+	
+	function memberCount() {
+		$db = new \tinyPHP\Classes\Core\MySQLiDriver();
+		$db->conn();
+		
+		$sql = $db->query( "SELECT COUNT(user_id) FROM " . TP . "users WHERE active = '1'" );
+		$r = $sql->fetch_array();
+		return $r['COUNT(user_id)'];
+	}
+	
+	function activeMemberCount() {
+		$db = new \tinyPHP\Classes\Core\MySQLiDriver();
+		$db->conn();
+		
+		$sql = $db->query( "SELECT COUNT(DISTINCT post_by) FROM ".TP."posts" );
+		$r = $sql->fetch_array();
+		return $r['COUNT(DISTINCT post_by)'];
+	}
+	
+	function newMember() {
+		$db = new \tinyPHP\Classes\Core\MySQLiDriver();
+		$db->conn();
+		
+		$sql = $db->query( "SELECT * FROM ".TP."users WHERE regdate >= CURDATE() - INTERVAL 1 WEEK" );
+		
+		if($sql->num_rows > 0) {
+			while($r = $sql->fetch_assoc()) {
+				$array[] = $r;
+			}
+			return $array;
+		}
+	}
+	
+	function latestForumTopic() {
+		$db = new \tinyPHP\Classes\Core\MySQLiDriver();
+		$db->conn();
+		
+		$sql = $db->query( "SELECT * FROM ".TP."topics ORDER BY topic_date DESC LIMIT 1" );
+		$r = $sql->fetch_object();
+		return '<a href="'.BASE_URL.'index/topic/'.$r->topic_id.'">'.$r->topic_subject.'</a>';
+	}
+
 	function tf_hash_password($password) {
 		// By default, use the portable hash from phpass
 		$hasher = new \tinyPHP\Classes\Libraries\PasswordHash(8, FALSE);

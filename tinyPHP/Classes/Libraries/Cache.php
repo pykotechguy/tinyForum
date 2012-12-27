@@ -118,13 +118,15 @@ class Cache {
 	 * 
 	 * @return mixed
 	 */
-	public function setCache() {
-		if(!$this->isCacheValid($this->_cachefile)) {
-			ob_start();
-			return $this->addLog( 'Could not find valid cachefile: ' . $this->_cachefile );
-    	} else {
-    		return true;
-    	}
+	public function setCache($cache = 'Yes') {
+		if($cache == 'Yes') :
+			if(!$this->isCacheValid($this->_cachefile)) {
+				ob_start();
+				return $this->addLog( 'Could not find valid cachefile: ' . $this->_cachefile );
+	    	} else {
+	    		return true;
+	    	}
+		endif;
 	}
 	
 	/**
@@ -133,15 +135,17 @@ class Cache {
 	 * 
 	 * @return mixed
 	 */
-	public function getCache() {
-		if(!$this->isCacheValid($this->_cachefile)) {
-			$output = ob_get_contents();
-			ob_end_clean();
-			$this->writeCache($output, $this->_cachefile);
-		} else {
-			$output = $this->readCache($this->_cachefile);
-		}
-		return $output;
+	public function getCache($cache = 'Yes') {
+		if($cache == 'Yes') :
+			if(!$this->isCacheValid($this->_cachefile)) {
+				$output = ob_get_contents();
+				ob_end_clean();
+				$this->writeCache($output, $this->_cachefile);
+			} else {
+				$output = $this->readCache($this->_cachefile);
+			}
+			return $output;
+		endif;
 	}
 	
 	/**

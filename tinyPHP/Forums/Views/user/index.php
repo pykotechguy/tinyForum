@@ -43,6 +43,7 @@
 				<ul class="info">
 					<li><strong>Join Date:</strong> <?php echo date('d M Y', strtotime($value['regdate'])); ?></li>
 					<li><strong>Posts:</strong> <?php echo userPostCount($value['user_id']); ?></li>
+					<li><strong>Status:</strong> <?php echo isUserOnline($value['username']); ?></li>
 				</ul>
 			</div><!-- /.col1-inner -->
 		</div><!-- /.col1 -->

@@ -40,7 +40,7 @@ class Login extends \tinyPHP\Classes\Core\Controller {
 		$this->view->render('login/success');
 	}
 	
-	public function run($data) {
+	public function run() {
 		$data = array();
 		$data['username'] = $_POST['username'];
 		$data['password'] = $_POST['password'];

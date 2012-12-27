@@ -32,12 +32,13 @@
     }
 	
 	$auth = new \tinyPHP\Classes\Libraries\Cookies();
+	$hook = new \tinyPHP\Classes\Libraries\Hooks();
 	
 	foreach($this->topic as $key => $value) {
 		$cache = new \tinyPHP\Classes\Libraries\Cache('1800', BASE_PATH . 'tmp/cache/', $value['topic_id'].'topic');
 	}
 	
-	if(!$cache->setCache()) :
+	if(!$cache->setCache( $hook->get_option('cache') )) :
 ?>
 
 <script type="text/javascript" >
@@ -93,6 +94,7 @@
 				<ul class="info">
 					<li><strong>Join Date:</strong> <?php echo date('d M Y', strtotime($value['regdate'])); ?></li>
 					<li><strong>Posts:</strong> <?php echo userPostCount($value['user_id']); ?></li>
+					<li><strong>Status:</strong> <?php echo isUserOnline($value['username']); ?></li>
 				</ul>
 			</div><!-- /.col1-inner -->
 		</div><!-- /.col1 -->
@@ -137,7 +139,7 @@
 </div><!-- /.posts-obj -->
 <!-- /.End of Posts area -->
 
-<?php endif; echo $cache->getCache(); ?>
+<?php endif; echo $cache->getCache( $hook->get_option('cache') ); ?>
 
 <?php if($auth->isUserLoggedIn() == true) {
 	if(getForumMeta($value['topic_fid'],'permission') == 'Y' || $auth->getUserField('role') == 'Administrator') { ?>

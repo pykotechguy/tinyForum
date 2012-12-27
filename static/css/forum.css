@@ -505,7 +505,20 @@ background:#388db8;color:#fff;text-decoration:none;
 
 div.avatar {
 	float:left;
-	padding:0px 10px 0px 0px;
+	margin:0px 10px 0px 0px;
+	-moz-border-radius: 3px;
+	-khtml-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+	border:3px solid #CCCCCC;
+}
+
+.online {    
+    display:inline-block;height:16px;line-height:16px;padding:0 5px;font-size:9px;font-weight:bold;text-transform:uppercase;color:#fff;-moz-border-radius:4px;-webkit-border-radius:4px;border-radius:4px;vertical-align:middle;background:rgb(129,188,91);
+}
+
+.offline {
+	display:inline-block;height:16px;line-height:16px;padding:0 5px;font-size:9px;font-weight:bold;text-transform:uppercase;color:#fff;-moz-border-radius:4px;-webkit-border-radius:4px;border-radius:4px;vertical-align:middle;background:#484949;
 }
 /*
 div.blocks1{width:px;}

@@ -50,18 +50,19 @@ $auth = new Auth;
 	<div class="inner">
 		<ul class="menu">
 			<li class="item01"><a href="<?php echo BASE_URL; ?>"><span>Home</span></a></li>
-			<?php if($auth->isUserLoggedIn() == true) { ?>
 			<li class="item02"><a class="parent" href="#"><span>Browse All Pages</span></a>
 			<ul>
+				<li><a href="<?php echo BASE_URL; ?>">Forum Home</a></li>
+				<?php if($auth->isUserLoggedIn() == true) { ?>
 				<?php if($auth->getUserField('role') == 'Administrator') { ?>
 				<li><a href="<?php echo BASE_URL; ?>settings">Forum Settings</a></li>
 				<li><a href="<?php echo BASE_URL; ?>category/create">Create a forum</a></li>
 				<?php } ?>
 				<li><a href="<?php echo BASE_URL; ?>profile">Edit Profile</a></li>
 				<li><a href="<?php echo BASE_URL; ?>topic/create">Start a topic</a></li>
+				<?php } ?>
 			</ul>
 			</li>
-			<?php } ?>
 		</ul>
 	</div><!-- /.inner -->
 </div><!-- /.topmenu -->

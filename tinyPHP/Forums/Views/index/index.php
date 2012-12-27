@@ -96,3 +96,58 @@ $auth = new \tinyPHP\Classes\Libraries\Cookies();
 </div><!-- /.cat -->
 </div><!-- /.cats-obj -->
 <!-- End first category object -->
+
+<!-- Start whats going on object -->
+<div class="going-obj">
+	<div class="cat">
+		<div class="box01">
+			<div class="cols1 clearfix">
+				<div class="col1"><div class="t1"><?php _e( _t( 'What\'s Going On?' ) ); ?></div></div>
+				<div class="col2"></div>
+			</div><!-- /.cols1 -->
+		</div><!-- /.box01 -->
+		<div class="posts">
+			<div class="box02">
+				<div class="cols2 clearfix">
+					<div class="col1"><?php _e( _t( 'Current Forum Info' ) ); ?></div>
+				</div>
+			</div>
+			<ul class="posts">
+				<li>
+				<div class="cols3 clearfix">
+					<div class="col1"><img src="<?php echo BASE_URL; ?>static/images/icon13.gif" alt="" width="32" height="21" /></div>
+					<div class="col2">
+					<div class="t2"><?php _e( _t( 'Currently Active Users' ) ); ?></div>
+					<div><?php echo whoIsOnline(); ?>.</div>
+					<div></div></div>
+					
+				</div>
+				</li>
+				<li class="last">
+				<div class="cols3 clearfix">
+					<div class="col1"><img src="<?php echo BASE_URL; ?>static/images/icon14.gif" alt="" width="30" height="26" /></div>
+					<div class="col2">
+					<div class="t2"><?php _e( _t( 'Forum Statistics' ) ); ?></div>
+					<div>
+						<?php _e( _t( 'Threads:' ) ); ?> <?php echo threadCount(); ?>, 
+						<?php _e( _t( 'Posts:' ) ); ?> <?php echo postCount(); ?>, 
+						Members: <?php echo memberCount(); ?>, 
+						Active Members: <?php echo activeMemberCount(); ?>
+					</div>
+					<div>
+						<?php _e( _t( 'Welcome to our newest member(s)' ) ); ?> 
+						<?php foreach(newMember() as $key => $value) echo '<a href="'.BASE_URL.'index/user/'.$value['user_id'].'">'.$value['username'].'</a>, '; ?>
+					</div>
+					<div>
+						<?php _e( _t( 'Latest Forum Topic:' ) ); ?> 
+						<?php echo latestForumTopic(); ?>
+					</div>
+					</div>
+					
+				</div>
+				</li>
+			</ul>
+		</div><!-- /.posts -->
+	</div><!-- /.cat -->
+</div><!-- /.going-obj -->
+<!-- End whats going on object -->

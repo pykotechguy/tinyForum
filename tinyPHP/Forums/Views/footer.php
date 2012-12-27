@@ -10,10 +10,10 @@ $hook = new Action;
 
 <div class="footer">
 	<div class="inner">
-		<div class="logo"><a href="http://forums.tinyphp.us/"><img src="<?php echo BASE_URL; ?>static/images/logo02.png" alt="" width="204" height="45" /></a></div>
+		<div class="logo"><a href="http://tinyforum.us/"><img src="<?php echo BASE_URL; ?>static/images/logo02.png" alt="" width="204" height="45" /></a></div>
 		<div class="links">
 			v<?php echo TFORUM_VERSION; ?>&nbsp;&nbsp;
-			<a href="http://tinyphp.us/"><img src="<?php echo BASE_URL; ?>static/images/tpowered.png" alt="Built with tinyPHP" title="Built with tinyPHP" /></a>&nbsp;&nbsp;
+			<a href="http://tinyphp.us/"><img src="<?php echo BASE_URL; ?>static/images/tpowered.png" alt="Powered by tinyPHP" title="Powered by tinyPHP" /></a>&nbsp;&nbsp;
 			<a href="http://us.php.net/"><img src="<?php echo BASE_URL; ?>static/images/php5.png" alt="Powered by PHP" title="Powered by PHP" /></a>
 		</div>
 	</div><!-- /.inner -->
