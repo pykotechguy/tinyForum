@@ -43,7 +43,7 @@ class Profile extends \tinyPHP\Classes\Core\Controller {
 		$this->view->render('profile/success');
 	}
 	
-	public function save($data) {
+	public function save() {
 		$data = array();
 		$data['first_name'] = $_POST['first_name'];
 		$data['last_name'] = $_POST['last_name'];

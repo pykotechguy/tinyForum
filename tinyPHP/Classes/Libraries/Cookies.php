@@ -68,6 +68,10 @@ class Cookies {
 		$vars = array();
 		parse_str($this->getCookieName(), $vars);
 		
+		if(!isset($vars['data'])) {
+			return NULL;
+		}
+		
 		$sql = $this->_db->query( "SELECT " . $field . " FROM " . TP . "users WHERE username = '".$vars['data']."'" );
 		$r = $sql->fetch_array();
 		if($sql->num_rows > 0) {
@@ -85,6 +89,10 @@ class Cookies {
 	function verifyAuth() {
 		$vars = array();
 		parse_str($this->getCookieName(), $vars);
+		
+		if(!isset($vars['data'])) {
+			return NULL;
+		}
 		
 		$sql = $this->_db->query( "SELECT * FROM " . TP . "users WHERE username = '".$vars['data']."'" );
 		$r = $sql->fetch_array();
