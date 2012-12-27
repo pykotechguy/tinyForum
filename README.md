@@ -17,4 +17,4 @@ installing on a production server. I advise that you use for testing purposes on
 
 ## More Info
 
-For more info on installation, hook, filters, extensions, etc., check out the [[wiki]]
+For more info on installation, hook, filters, extensions, etc., check out the wiki: https://github.com/7mediaws/tinyForum/wiki
