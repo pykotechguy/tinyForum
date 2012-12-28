@@ -41,7 +41,7 @@ class Settings extends \tinyPHP\Classes\Core\Controller {
 		$this->view->render('settings/success');
 	}
 	
-	public function save($options) {
+	public function save() {
 		$options = array( 
 							'admin_email',
 							'forum_name',

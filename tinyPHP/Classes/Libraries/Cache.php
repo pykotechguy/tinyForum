@@ -243,6 +243,7 @@ class Cache {
 	 * @return mixed
 	 */
 	public function addLog($value) {
+		$this->_log = array();
 		array_push($this->_log, round((microtime(true) - $this->_starttime),5).'s - '. $value);
 	}
 }

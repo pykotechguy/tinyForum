@@ -45,7 +45,7 @@ class Category extends \tinyPHP\Classes\Core\Controller {
 		$this->view->render('category/create');
 	}
 	
-	public function run($data) {
+	public function run() {
 		if($this->_auth->isUserLoggedIn() != true) {
 			redirect(BASE_URL);
 		}
@@ -67,7 +67,7 @@ class Category extends \tinyPHP\Classes\Core\Controller {
 		$this->view->render('category/edit');
 	}
 	
-	public function editSave($data) {
+	public function editSave() {
 		if($this->_auth->isUserLoggedIn() != true) {
 			redirect(BASE_URL);
 		}

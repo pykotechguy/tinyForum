@@ -340,7 +340,7 @@ class Hooks {
 
 		$this->db->query( "UPDATE " . TP . "options SET `option_value` = '$_newvalue' WHERE `option_name` = '$option_name'");
 
-		if ( $this->db->rows_affected == 1 ) {
+		if ( $this->db->rows_affected() == 1 ) {
 			$this->db->option[$option_name] = $newvalue;
 			return true;
 		}

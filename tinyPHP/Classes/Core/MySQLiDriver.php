@@ -96,6 +96,10 @@ class MySQLiDriver extends \tinyPHP\Classes\Core\Model {
 	public function insert_id() {
 		return $this->_connection->insert_id;
 	}
+	
+	public function rows_affected() {
+		return $this->_connection->affected_rows;
+	}
  
     /**
      * Executes query and returns results.

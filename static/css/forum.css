@@ -506,11 +506,17 @@ background:#388db8;color:#fff;text-decoration:none;
 div.avatar {
 	float:left;
 	margin:0px 10px 0px 0px;
-	-moz-border-radius: 3px;
-	-khtml-border-radius: 3px;
-	-webkit-border-radius: 3px;
-	border-radius: 3px;
-	border:3px solid #CCCCCC;
+	background: #ffffff;
+	padding: 4px;
+	border: 1px solid #ddd;
+
+/* Round Corners (native in Safari, Firefox and Chrome) */
+	-moz-border-radius: 6px;
+	-webkit-border-radius: 6px;
+
+/* Add the Shadow */
+	-moz-box-shadow: 2px 2px 2px #dddddd;
+	-webkit-box-shadow: 2px 2px 2px #dddddd;
 }
 
 .online {    

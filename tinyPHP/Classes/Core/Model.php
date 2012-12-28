@@ -24,6 +24,7 @@ abstract class Model {
 	abstract protected function is_error();
 	abstract protected function disconnect();
 	abstract protected function insert_id();
+	abstract protected function rows_affected();
 	abstract protected function query($sql);
 	abstract protected function select($table, $fields = '*', $where = null, $order = null);
 	abstract protected function insert($table,$values,$fields = null);

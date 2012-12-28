@@ -27,12 +27,14 @@ class LoginModel {
 	private $_hook;
 	private $_auth;
 	private $_val;
+	private $_cache;
 	
 	public function __construct() {
 		$this->_hook = new \tinyPHP\Classes\Libraries\Hooks();
 		$this->_auth = new \tinyPHP\Classes\Libraries\Cookies();
 		$this->_db = new \tinyPHP\Classes\Core\MySQLiDriver();
 		$this->_val = new \tinyPHP\Classes\Core\Val();
+		$this->_cache = new \tinyPHP\Classes\Libraries\Cache('',BASE_PATH.'tmp/cache/','');
 		
 		$this->_db->conn();
 		$this->_enc = time()+999999*(1000000*time());
@@ -46,6 +48,8 @@ class LoginModel {
 		$this->_val->is_valid_username($data['username']) == false) {
 			redirect(BASE_URL . 'error/login');
 		} else {
+			$this->_cache->purge();
+			
 			$user = $this->_db->escape( $data['username'] );
 			$pass = $this->_db->escape( $data['password'] );
 			

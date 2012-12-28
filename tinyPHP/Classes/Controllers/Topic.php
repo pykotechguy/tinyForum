@@ -57,7 +57,7 @@ class Topic extends \tinyPHP\Classes\Core\Controller {
 		$this->view->render('topic/edit');
 	}
 	
-	public function run($data) {
+	public function run() {
 		if($this->_auth->isUserLoggedIn() != true) {
 			redirect(BASE_URL);
 		}
@@ -70,7 +70,7 @@ class Topic extends \tinyPHP\Classes\Core\Controller {
 		$this->model->run($data);
 	}
 	
-	public function reply($data) {
+	public function reply() {
 		if($this->_auth->isUserLoggedIn() != true) {
 			redirect(BASE_URL);
 		}
@@ -82,7 +82,7 @@ class Topic extends \tinyPHP\Classes\Core\Controller {
 		$this->model->reply($data);
 	}
 	
-	public function editSave($data) {
+	public function editSave() {
 		if($this->_auth->isUserLoggedIn() != true) {
 			redirect(BASE_URL);
 		}
@@ -95,7 +95,7 @@ class Topic extends \tinyPHP\Classes\Core\Controller {
 		$this->model->editSave($data);
 	}
 
-	public function delete($data) {
+	public function delete() {
 		if($this->_auth->isUserLoggedIn() != true) {
 			redirect(BASE_URL);
 		}

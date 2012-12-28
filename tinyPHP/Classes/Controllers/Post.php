@@ -35,7 +35,7 @@ class Post extends \tinyPHP\Classes\Core\Controller {
 	
 	public function index() {}
 	
-	public function editSave($data) {
+	public function editSave() {
 		if($this->_auth->isUserLoggedIn() != true) {
 			redirect(BASE_URL);
 		}
@@ -46,7 +46,7 @@ class Post extends \tinyPHP\Classes\Core\Controller {
 		$this->model->editSave($data);
 	}
 	
-	public function delete($data) {
+	public function delete() {
 		if($this->_auth->isUserLoggedIn() != true) {
 			redirect(BASE_URL);
 		}
@@ -56,32 +56,5 @@ class Post extends \tinyPHP\Classes\Core\Controller {
 		$this->model->delete($data);
 		redirect(BASE_URL . 'index/category/' . $data['fid']);
 	}
-	
-	/*public function run($data) {
-		if($this->_auth->isUserLoggedIn() != true) {
-			redirect(BASE_URL);
-		}
-		$data = array();
-		$data['topic_subject'] = $_POST['topic_subject'];
-		$data['topic_date'] = date("Y-m-d H:i:s");
-		$data['topic_fid'] = $_POST['topic_fid'];
-		$data['topic_by'] = '2';
-		$data['post_content'] = $_POST['post_content'];
-		$this->model->run($data);
-		redirect(BASE_URL . 'index/category/' . $data['topic_fid']);
-	}
-	
-	public function reply($data) {
-		if($this->_auth->isUserLoggedIn() != true) {
-			redirect(BASE_URL);
-		}
-		$data = array();
-		$data['post_content'] = $_POST['post_content'];
-		$data['post_date'] = date("Y-m-d H:i:s");
-		$data['post_topic'] = $_POST['tID'];
-		$data['post_by'] = '1';
-		$this->model->reply($data);
-		redirect(BASE_URL . 'index/topic/' . $data['post_topic']);
-	}*/
 	
 }

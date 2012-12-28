@@ -23,11 +23,14 @@ class Cookies {
 	
 	private $_db;
 	private $_hook;
+	private $_cache;
 	
 	public function __construct() {
 		$this->_hook = new \tinyPHP\Classes\Libraries\Hooks();
 		$this->_db = new \tinyPHP\Classes\Core\MySQLiDriver();
 		$this->_db->conn();
+		
+		$this->_cache = new \tinyPHP\Classes\Libraries\Cache('',BASE_PATH.'tmp/cache/','');
 	}
 	
 	/**
@@ -145,6 +148,7 @@ class Cookies {
       	$username = $this->getUserField('username');
       	
 		$this->_db->query( "UPDATE " . TP . "users SET auth_token = 'NULL' WHERE username = '$username'" );
+		$this->_cache->purge();
 		redirect(BASE_URL);
 	}
 
