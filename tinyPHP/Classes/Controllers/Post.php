@@ -28,17 +28,15 @@ class Post extends \tinyPHP\Classes\Core\Controller {
 		ob_start();
 		
 		$this->_auth = new \tinyPHP\Classes\Libraries\Cookies();
-		if($this->_auth->isUserLoggedIn() != true) {
-			redirect(BASE_URL);
-		}
+		
+		if(!$this->_auth->isUserLoggedIn()) { redirect(BASE_URL); }
 	}
 	
 	public function index() {}
 	
 	public function editSave() {
-		if($this->_auth->isUserLoggedIn() != true) {
-			redirect(BASE_URL);
-		}
+		if(!$this->_auth->isUserLoggedIn()) { redirect(BASE_URL); }
+		
 		$data = array();
 		$data['content'] = $_POST['post_content'];
 		$data['pid'] = $_POST['pID'];
@@ -47,9 +45,8 @@ class Post extends \tinyPHP\Classes\Core\Controller {
 	}
 	
 	public function delete() {
-		if($this->_auth->isUserLoggedIn() != true) {
-			redirect(BASE_URL);
-		}
+		if(!$this->_auth->isUserLoggedIn()) { redirect(BASE_URL); }
+		
 		$data = array();
 		$data['post_id'] = $_POST['pID'];
 		$data['fid'] = $_POST['fID'];

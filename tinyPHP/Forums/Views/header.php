@@ -26,7 +26,7 @@ $auth = new Auth;
 		<div class="col2"></div>
 		<div class="col3"></div>
 		<div class="col4"></div>
-		<?php if($auth->isUserLoggedIn() == true) { ?>
+		<?php if($auth->isUserLoggedIn()) { ?>
 		<div class="col5">Howdy</div>
 		<div class="col6"><a href="<?php echo BASE_URL; ?>profile"><?php echo $auth->getUserField('username'); ?></a> <a href="<?php echo BASE_URL; ?>index/logout">( Logout )</a></div>
 		<?php } else { ?>
@@ -53,7 +53,7 @@ $auth = new Auth;
 			<li class="item02"><a class="parent" href="#"><span>Browse All Pages</span></a>
 			<ul>
 				<li><a href="<?php echo BASE_URL; ?>">Forum Home</a></li>
-				<?php if($auth->isUserLoggedIn() == true) { ?>
+				<?php if($auth->isUserLoggedIn()) { ?>
 				<?php if($auth->getUserField('role') == 'Administrator') { ?>
 				<li><a href="<?php echo BASE_URL; ?>settings">Forum Settings</a></li>
 				<li><a href="<?php echo BASE_URL; ?>category/create">Create a forum</a></li>

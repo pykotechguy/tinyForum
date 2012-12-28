@@ -49,7 +49,7 @@ $(document).ready(function(){
 <!-- Start new thread bar -->
 <div class="new-obj">
 	<div class="cols1 clearfix">
-		<?php if($auth->isUserLoggedIn() == true) { ?>
+		<?php if($auth->isUserLoggedIn()) { ?>
 		<div class="floatleft"><a class="new" href="<?php echo BASE_URL; ?>topic/create/">Start new topic</a></div>
 		<?php } ?>
 	</div><!-- /.cols1 -->
@@ -85,7 +85,7 @@ $(document).ready(function(){
 						<div class="t2">
 							<a href="<?php echo BASE_URL; ?>index/topic/<?php echo $value['topic_id']; ?>"><?php echo stripslashes($value['topic_subject']); ?></a>&nbsp;
 							
-							<?php if($auth->isUserLoggedIn() == true && $value['topic_by'] == $auth->getUserField('user_id')) { ?>
+							<?php if($auth->isUserLoggedIn() && $value['topic_by'] == $auth->getUserField('user_id')) { ?>
 								<div style="float:left;">
 								<a href="<?php echo BASE_URL; ?>topic/edit/<?php echo $value['topic_id']; ?>">
 									<img src="<?php echo BASE_URL; ?>static/images/bg54.png" alt="" width="13" height="13" />

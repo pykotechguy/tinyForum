@@ -37,18 +37,16 @@ class Category extends \tinyPHP\Classes\Core\Controller {
 	}
 	
 	public function create() {
-		if($this->_auth->isUserLoggedIn() != true) {
-			redirect(BASE_URL);
-		}
+		if(!$this->_auth->isUserLoggedIn()) { redirect(BASE_URL); }
+		
 		$this->view->css = array('markitup/skins/markitup/style.css','markitup/sets/html/style.css');
 		$this->view->js = array('markitup/jquery.markitup.js','markitup/sets/html/set.js');
 		$this->view->render('category/create');
 	}
 	
 	public function run() {
-		if($this->_auth->isUserLoggedIn() != true) {
-			redirect(BASE_URL);
-		}
+		if(!$this->_auth->isUserLoggedIn()) { redirect(BASE_URL); }
+		
 		$data = array();
 		$data['permission'] = $_POST['permission'];
 		$data['name'] = $_POST['name'];
@@ -58,9 +56,8 @@ class Category extends \tinyPHP\Classes\Core\Controller {
 	}
 	
 	public function edit($id) {
-		if($this->_auth->isUserLoggedIn() != true) {
-			redirect(BASE_URL);
-		}
+		if(!$this->_auth->isUserLoggedIn()) { redirect(BASE_URL); }
+		
 		$this->view->css = array('markitup/skins/markitup/style.css','markitup/sets/html/style.css');
 		$this->view->js = array('markitup/jquery.markitup.js','markitup/sets/html/set.js');
 		$this->view->forum = $this->model->forum($id);
@@ -68,9 +65,8 @@ class Category extends \tinyPHP\Classes\Core\Controller {
 	}
 	
 	public function editSave() {
-		if($this->_auth->isUserLoggedIn() != true) {
-			redirect(BASE_URL);
-		}
+		if(!$this->_auth->isUserLoggedIn()) { redirect(BASE_URL); }
+		
 		$data = array();
 		$data['permission'] = $_POST['permission'];
 		$data['name'] = $_POST['name'];

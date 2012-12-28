@@ -60,9 +60,8 @@ class Index extends \tinyPHP\Classes\Core\Controller {
 	}
 	
 	public function user($id) {
-		if($this->_auth->isUserLoggedIn() != true) {
-			redirect(BASE_URL. 'error/user');
-		}
+		if(!$this->_auth->isUserLoggedIn()) { redirect(BASE_URL. 'error/user'); }
+		
 		$this->view->user = $this->model->user($id);
 		$this->view->render('user/index');
 	}

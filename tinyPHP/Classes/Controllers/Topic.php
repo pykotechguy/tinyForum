@@ -37,9 +37,8 @@ class Topic extends \tinyPHP\Classes\Core\Controller {
 	}
 	
 	public function create() {
-		if($this->_auth->isUserLoggedIn() != true) {
-			redirect(BASE_URL);
-		}
+		if(!$this->_auth->isUserLoggedIn()) { redirect(BASE_URL); }
+		
 		$this->view->cats = $this->model->listCats();
 		$this->view->css = array('markitup/skins/markitup/style.css','markitup/sets/html/style.css');
 		$this->view->js = array('markitup/jquery.markitup.js','markitup/sets/html/set.js');
@@ -47,9 +46,8 @@ class Topic extends \tinyPHP\Classes\Core\Controller {
 	}
 	
 	public function edit($id) {
-		if($this->_auth->isUserLoggedIn() != true) {
-			redirect(BASE_URL);
-		}
+		if(!$this->_auth->isUserLoggedIn()) { redirect(BASE_URL); }
+		
 		$this->view->cats = $this->model->listCats();
 		$this->view->editTopic = $this->model->singleTopic($id);
 		$this->view->css = array('markitup/skins/markitup/style.css','markitup/sets/html/style.css');
@@ -58,9 +56,8 @@ class Topic extends \tinyPHP\Classes\Core\Controller {
 	}
 	
 	public function run() {
-		if($this->_auth->isUserLoggedIn() != true) {
-			redirect(BASE_URL);
-		}
+		if(!$this->_auth->isUserLoggedIn()) { redirect(BASE_URL); }
+		
 		$data = array();
 		$data['topic_subject'] = $_POST['topic_subject'];
 		$data['topic_date'] = date("Y-m-d H:i:s");
@@ -71,9 +68,8 @@ class Topic extends \tinyPHP\Classes\Core\Controller {
 	}
 	
 	public function reply() {
-		if($this->_auth->isUserLoggedIn() != true) {
-			redirect(BASE_URL);
-		}
+		if(!$this->_auth->isUserLoggedIn()) { redirect(BASE_URL); }
+		
 		$data = array();
 		$data['post_content'] = $_POST['post_content'];
 		$data['post_date'] = date("Y-m-d H:i:s");
@@ -83,9 +79,8 @@ class Topic extends \tinyPHP\Classes\Core\Controller {
 	}
 	
 	public function editSave() {
-		if($this->_auth->isUserLoggedIn() != true) {
-			redirect(BASE_URL);
-		}
+		if(!$this->_auth->isUserLoggedIn()) { redirect(BASE_URL); }
+		
 		$data = array();
 		$data['subject'] = $_POST['topic_subject'];
 		$data['content'] = $_POST['post_content'];
@@ -96,9 +91,8 @@ class Topic extends \tinyPHP\Classes\Core\Controller {
 	}
 
 	public function delete() {
-		if($this->_auth->isUserLoggedIn() != true) {
-			redirect(BASE_URL);
-		}
+		if(!$this->_auth->isUserLoggedIn()) { redirect(BASE_URL); }
+		
 		$data = array();
 		$data['tid'] = $_POST['tID'];
 		$data['fid'] = $_POST['fID'];

@@ -118,6 +118,7 @@ class Cookies {
 		} else {
 			return false;
 		}
+		$this->_hook->add_action('init','isUserLoggedIn');
 	}
 	
 	/**

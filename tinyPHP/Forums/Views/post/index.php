@@ -38,7 +38,7 @@
    });
 </script>
 
-<?php if($auth->isUserLoggedIn() == true) { ?>
+<?php if($auth->isUserLoggedIn()) { ?>
 <?php foreach($this->post as $key => $value) { ?>
 <!-- /.Start of reply object -->
 <div class="reply-obj">

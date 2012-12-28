@@ -38,7 +38,7 @@
    });
 </script>
 
-<?php if($auth->isUserLoggedIn() == true) { ?>
+<?php if($auth->isUserLoggedIn()) { ?>
 <!-- /.Start of reply object -->
 <div class="reply-obj">
 	<div class="t1">Create a new topic</div>

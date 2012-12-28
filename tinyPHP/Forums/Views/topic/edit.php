@@ -38,7 +38,7 @@
    });
 </script>
 
-<?php if($auth->isUserLoggedIn() == true) {
+<?php if($auth->isUserLoggedIn()) {
 	foreach($this->editTopic as $key => $value) { ?>
 <!-- /.Start of reply object -->
 <div class="reply-obj">

@@ -1,7 +1,7 @@
 <?php if ( ! defined('BASE_PATH') ) exit('No direct script access allowed');
 /**
  *
- * Enable Helpers
+ * Action Helper
  *  
  * PHP 5
  *
@@ -16,7 +16,9 @@
  * @since tinyPHP(tm) v 0.1
  * @license MIT License (http://www.opensource.org/licenses/mit-license.php)
  */
+	
 
-
-$apphelp = new tinyPHP\Classes\Core\Extension();
-$apphelp->helper(array('gettext','default','forum','actions'));
+	function init() {
+		$hook = new \tinyPHP\Classes\Libraries\Hooks();
+		$hook->do_action('init');
+	}

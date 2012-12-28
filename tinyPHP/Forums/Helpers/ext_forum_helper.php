@@ -165,10 +165,11 @@
 		$sql = $db->query( "SELECT * FROM ".TP."users WHERE regdate >= CURDATE() - INTERVAL 1 WEEK" );
 		
 		if($sql->num_rows > 0) {
-			while($r = $sql->fetch_assoc()) {
-				$array[] = $r;
+			while($r = $sql->fetch_array()) {
+				return '<a href="'.BASE_URL.'index/user/'.$r['user_id'].'">'.$r['username'].'</a>, ';
 			}
-			return $array;
+		} else {
+			echo 'None';
 		}
 	}
 	

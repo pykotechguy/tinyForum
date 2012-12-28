@@ -25,9 +25,9 @@ class Login extends \tinyPHP\Classes\Core\Controller {
 
 	public function __construct() {
 		$this->_auth = new \tinyPHP\Classes\Libraries\Cookies();
-		if($this->_auth->isUserLoggedIn() == true) {
-			redirect(BASE_URL);
-		}
+		
+		if($this->_auth->isUserLoggedIn()) { redirect(BASE_URL); }
+		
 		parent::__construct();
 		ob_start();
 	}

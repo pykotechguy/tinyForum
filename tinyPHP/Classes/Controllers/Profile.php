@@ -29,9 +29,8 @@ class Profile extends \tinyPHP\Classes\Core\Controller {
 		ob_start();
 		
 		$this->_auth = new Auth;
-		if($this->_auth->isUserLoggedIn() != true) {
-			redirect(BASE_URL);
-		}
+		
+		if(!$this->_auth->isUserLoggedIn()) { redirect(BASE_URL); }
 	}
 	
 	public function index() {

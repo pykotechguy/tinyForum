@@ -62,7 +62,7 @@ $auth = new \tinyPHP\Classes\Libraries\Cookies();
 						
 					<?php } else {  ?>
 					
-					<?php if($auth->isUserLoggedIn() == true) { ?>
+					<?php if($auth->isUserLoggedIn()) { ?>
 					<a href="<?php echo BASE_URL; ?>topic/create"><?php echo stripslashes($value['name']); ?></a>
 					<?php } else { echo stripslashes($value['name']); } ?>
 					
@@ -136,7 +136,7 @@ $auth = new \tinyPHP\Classes\Libraries\Cookies();
 					</div>
 					<div>
 						<?php _e( _t( 'Welcome to our newest member(s)' ) ); ?> 
-						<?php foreach(newMember() as $key => $value) echo '<a href="'.BASE_URL.'index/user/'.$value['user_id'].'">'.$value['username'].'</a>, '; ?>
+						<?php echo newMember(); ?>
 					</div>
 					<div>
 						<?php _e( _t( 'Latest Forum Topic:' ) ); ?> 

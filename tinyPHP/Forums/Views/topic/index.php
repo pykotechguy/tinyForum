@@ -141,7 +141,7 @@
 
 <?php endif; echo $cache->getCache( $hook->get_option('cache') ); ?>
 
-<?php if($auth->isUserLoggedIn() == true) {
+<?php if($auth->isUserLoggedIn()) {
 	if(getForumMeta($value['topic_fid'],'permission') == 'Y' || $auth->getUserField('role') == 'Administrator') { ?>
 <!-- /.Start of reply object -->
 <div class="reply-obj">
