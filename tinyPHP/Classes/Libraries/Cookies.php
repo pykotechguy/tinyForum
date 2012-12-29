@@ -5,15 +5,15 @@
  *  
  * PHP 5
  *
- * tinyPHP(tm) : Simple & Lightweight MVC Framework (http://tinyphp.us/)
+ * tinyForum(tm) : Simple & Lightweight Forum (http://tinyforum.us/site/index)
  * Copyright 2012, 7 Media Web Solutions, LLC (http://www.7mediaws.org/)
  *
  * Licensed under The MIT License
  * Redistributions of files must retain the above copyright notice.
  *
  * @copyright Copyright 2012, 7 Media Web Solutions, LLC (http://www.7mediaws.org/)
- * @link http://tinyphp.us/ tinyPHP(tm) Project
- * @since tinyPHP(tm) v 0.1
+ * @link http://tinyforum.us/site/index tinyForum(tm) Project
+ * @since tinyForum(tm) v 0.1
  * @license MIT License (http://www.opensource.org/licenses/mit-license.php)
  */
 
@@ -75,7 +75,7 @@ class Cookies {
 			return NULL;
 		}
 		
-		$sql = $this->_db->query( "SELECT " . $field . " FROM " . TP . "users WHERE username = '".$vars['data']."'" );
+		$sql = $this->_db->query( "SELECT * FROM " . TP . "users WHERE username = '".$vars['data']."'" );
 		$r = $sql->fetch_array();
 		if($sql->num_rows > 0) {
 			return $r[$field];

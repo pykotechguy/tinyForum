@@ -5,15 +5,15 @@
  *  
  * PHP 5
  *
- * tinyPHP(tm) : Simple & Lightweight MVC Framework (http://tinyphp.us/)
+ * tinyForum(tm) : Simple & Lightweight Forum (http://tinyforum.us/site/index)
  * Copyright 2012, 7 Media Web Solutions, LLC (http://www.7mediaws.org/)
  *
  * Licensed under The MIT License
  * Redistributions of files must retain the above copyright notice.
  *
  * @copyright Copyright 2012, 7 Media Web Solutions, LLC (http://www.7mediaws.org/)
- * @link http://tinyphp.us/ tinyPHP(tm) Project
- * @since tinyPHP(tm) v 0.1
+ * @link http://tinyforum.us/site/index tinyForum(tm) Project
+ * @since tinyForum(tm) v 0.1
  * @license MIT License (http://www.opensource.org/licenses/mit-license.php)
  */
 
@@ -52,8 +52,8 @@
 	<!-- Start breadcrumb -->
 	<div class="breadcrumb">
 	<ul>
-		<li><a href="<?php echo BASE_URL; ?>">Home</a></li>
-		<li><a href="<?php echo BASE_URL; ?>index/category/<?php echo $value['topic_fid']; ?>">Main Forum</a></li>
+		<li><a href="<?php echo BASE_URL; ?>"><?php _e( _t( 'Home' ) ); ?></a></li>
+		<li><a href="<?php echo BASE_URL; ?>index/category/<?php echo $value['topic_fid']; ?>"><?php _e( _t( 'Main Forum' ) ); ?></a></li>
 		<li><a class="active" href="<?php echo BASE_URL; ?>index/topic/<?php echo $value['topic_id']; ?>"><?php echo $value['topic_subject']; ?></a></li>
 	</ul>
 	</div><!-- /.breadcrumb -->
@@ -63,7 +63,7 @@
 
 	<div class="box01">
 		<div class="cols1 clearfix">
-			<div class="col1">Viewing <?php foreach( $this->title as $k => $v) { echo $v['topic_subject']; } ?></div>
+			<div class="col1"><?php _e( _t( 'Viewing' ) ); ?> <?php foreach( $this->title as $k => $v) { echo $v['topic_subject']; } ?></div>
 			<div class="col2"></div>
 			<div class="col3">&nbsp;</div>
 		</div><!-- /.cols1 -->
@@ -92,9 +92,9 @@
 				<div class="role"><?php echo $value['role']; ?></div>
 				<div class="photo"><?php echo get_user_avatar(getUserMeta($value['user_id'],'email'),115); ?></div>
 				<ul class="info">
-					<li><strong>Join Date:</strong> <?php echo date('d M Y', strtotime($value['regdate'])); ?></li>
-					<li><strong>Posts:</strong> <?php echo userPostCount($value['user_id']); ?></li>
-					<li><strong>Status:</strong> <?php echo isUserOnline($value['username']); ?></li>
+					<li><strong><?php _e( _t( 'Join Date:' ) ); ?></strong> <?php echo date('d M Y', strtotime($value['regdate'])); ?></li>
+					<li><strong><?php _e( _t( 'Posts:' ) ); ?></strong> <?php echo userPostCount($value['user_id']); ?></li>
+					<li><strong><?php _e( _t( 'Status:' ) ); ?></strong> <?php echo isUserOnline($value['username']); ?></li>
 				</ul>
 			</div><!-- /.col1-inner -->
 		</div><!-- /.col1 -->
@@ -145,14 +145,14 @@
 	if(getForumMeta($value['topic_fid'],'permission') == 'Y' || $auth->getUserField('role') == 'Administrator') { ?>
 <!-- /.Start of reply object -->
 <div class="reply-obj">
-	<div class="t1">Quick Reply</div>
-	<div class="t2">Reply To This Topic</div>
+	<div class="t1"><?php _e( _t( 'Quick Reply' ) ); ?></div>
+	<div class="t2"><?php _e( _t( 'Reply To This Topic' ) ); ?></div>
 	<div class="box01">
 		<form method="post" action="<?php echo BASE_URL; ?>topic/reply/<?php echo $value['topic_id']; ?>">
 		<div><textarea id="postcontent" width="904" height="131" name="post_content"></textarea></div>
 		<div><input type="hidden" name="tID" value="<?php echo $value['topic_id']; ?>" /></div>
 		<div class="cols1 clearfix">
-			<div class="col3"><input class="a2" type="submit" value="Post Quick Reply" /></div>
+			<div class="col3"><input class="a2" type="submit" value="<?php _e( _t( 'Post Quick Reply' ) ); ?>" /></div>
 		</div>
 		</form>
 	</div><!-- /.box01 -->

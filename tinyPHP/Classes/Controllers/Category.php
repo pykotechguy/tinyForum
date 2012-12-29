@@ -5,14 +5,14 @@
  *  
  * PHP 5
  *
- * tinyForum(tm) : Simple & Lightweight Forum (http://tinyphp.us/downloads/tinyForum/)
+ * tinyForum(tm) : Simple & Lightweight Forum (http://tinyforum.us/site/index)
  * Copyright 2012, 7 Media Web Solutions, LLC (http://www.7mediaws.org/)
  *
  * Licensed under The MIT License
  * Redistributions of files must retain the above copyright notice.
  *
  * @copyright Copyright 2012, 7 Media Web Solutions, LLC (http://www.7mediaws.org/)
- * @link http://tinyphp.us/downloads/tinyForum/ tinyForum(tm) Project
+ * @link http://tinyforum.us/site/index tinyForum(tm) Project
  * @since tinyForum(tm) v 0.1
  * @license MIT License (http://www.opensource.org/licenses/mit-license.php)
  */
@@ -33,15 +33,21 @@ class Category extends \tinyPHP\Classes\Core\Controller {
 	public function index() {}
 	
 	public function success() {
-		$this->view->render('category/success');
+		$this->view->staticTitle = array('Success');
+		$this->view->render('header/index',true);
+		$this->view->render('category/success',true);
+		$this->view->render('footer/index',true);
 	}
 	
 	public function create() {
 		if(!$this->_auth->isUserLoggedIn()) { redirect(BASE_URL); }
 		
+		$this->view->staticTitle = array('Create a Forum');
 		$this->view->css = array('markitup/skins/markitup/style.css','markitup/sets/html/style.css');
 		$this->view->js = array('markitup/jquery.markitup.js','markitup/sets/html/set.js');
-		$this->view->render('category/create');
+		$this->view->render('header/index',true);
+		$this->view->render('category/create',true);
+		$this->view->render('footer/index',true);
 	}
 	
 	public function run() {
@@ -58,10 +64,13 @@ class Category extends \tinyPHP\Classes\Core\Controller {
 	public function edit($id) {
 		if(!$this->_auth->isUserLoggedIn()) { redirect(BASE_URL); }
 		
+		$this->view->dynamicTitle = $this->model->editForumTitle($id);
 		$this->view->css = array('markitup/skins/markitup/style.css','markitup/sets/html/style.css');
 		$this->view->js = array('markitup/jquery.markitup.js','markitup/sets/html/set.js');
 		$this->view->forum = $this->model->forum($id);
-		$this->view->render('category/edit');
+		$this->view->render('header/index',true);
+		$this->view->render('category/edit',true);
+		$this->view->render('footer/index',true);
 	}
 	
 	public function editSave() {

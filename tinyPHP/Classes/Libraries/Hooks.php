@@ -1,7 +1,7 @@
 <?php namespace tinyPHP\Classes\Libraries;
 /**
  *
- * @package tinyForum
+ * @package PHP Plugin & Hook System
  * @since 1.0
  */
 

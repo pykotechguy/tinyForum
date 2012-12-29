@@ -5,15 +5,15 @@
  *  
  * PHP 5
  *
- * tinyPHP(tm) : Simple & Lightweight MVC Framework (http://tinyphp.us/)
+ * tinyForum(tm) : Simple & Lightweight Forum (http://tinyforum.us/site/index)
  * Copyright 2012, 7 Media Web Solutions, LLC (http://www.7mediaws.org/)
  *
  * Licensed under The MIT License
  * Redistributions of files must retain the above copyright notice.
  *
  * @copyright Copyright 2012, 7 Media Web Solutions, LLC (http://www.7mediaws.org/)
- * @link http://tinyphp.us/ tinyPHP(tm) Project
- * @since tinyPHP(tm) v 0.1
+ * @link http://tinyforum.us/site/index tinyForum(tm) Project
+ * @since tinyForum(tm) v 0.1
  * @license MIT License (http://www.opensource.org/licenses/mit-license.php)
  */
 
@@ -138,11 +138,21 @@ class TopicModel {
 			$tID = $this->_db->escape((int)$data['id']);
 			$pID = $this->_db->escape((int)$data['pid']);
 			
-			$this->_db->query( "UPDATE ".TP."topics SET topic_subject='$subject' WHERE topic_fid = '$fID' AND topic_id = '$tID'" );
-			$this->_db->query( "UPDATE ".TP."posts SET post_content='$content' WHERE post_topic = '$tID' AND post_id = '$pID'" );
+			$this->_db->query( "UPDATE ".TP."topics SET topic_subject='$subject' WHERE topic_fid = '$fID' AND topic_id = '$tID' AND topic_by = '".$this->_auth->getUserField('user_id')."'" );
+			$this->_db->query( "UPDATE ".TP."posts SET post_content='$content' WHERE post_topic = '$tID' AND post_id = '$pID' AND post_by = '".$this->_auth->getUserField('user_id')."'" );
 			
 			$this->_cache->purge();
 			redirect(BASE_URL . 'index/topic/' . $data['id']);
+		}
+	}
+	
+	public function editDynamicTopicTitle($id) {
+		$sql = $this->_db->query( "SELECT * FROM ".TP."topics WHERE topic_id = '$id'" );
+		if($sql->num_rows >0) {
+			while($r = $sql->fetch_assoc()) {
+				$title = array('Editing Topic: ' . $r['topic_subject']);
+			}
+			return $title;
 		}
 	}
 	

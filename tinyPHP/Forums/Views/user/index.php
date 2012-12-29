@@ -5,15 +5,15 @@
  *  
  * PHP 5
  *
- * tinyPHP(tm) : Simple & Lightweight MVC Framework (http://tinyphp.us/)
+ * tinyForum(tm) : Simple & Lightweight Forum (http://tinyforum.us/site/index)
  * Copyright 2012, 7 Media Web Solutions, LLC (http://www.7mediaws.org/)
  *
  * Licensed under The MIT License
  * Redistributions of files must retain the above copyright notice.
  *
  * @copyright Copyright 2012, 7 Media Web Solutions, LLC (http://www.7mediaws.org/)
- * @link http://tinyphp.us/ tinyPHP(tm) Project
- * @since tinyPHP(tm) v 0.1
+ * @link http://tinyforum.us/site/index tinyForum(tm) Project
+ * @since tinyForum(tm) v 0.1
  * @license MIT License (http://www.opensource.org/licenses/mit-license.php)
  */
 ?>
@@ -41,9 +41,9 @@
 				<div class="role"><?php echo $value['role']; ?></div>
 				<div class="photo"><?php echo get_user_avatar(getUserMeta($value['user_id'],'email'),115); ?></div>
 				<ul class="info">
-					<li><strong>Join Date:</strong> <?php echo date('d M Y', strtotime($value['regdate'])); ?></li>
-					<li><strong>Posts:</strong> <?php echo userPostCount($value['user_id']); ?></li>
-					<li><strong>Status:</strong> <?php echo isUserOnline($value['username']); ?></li>
+					<li><strong><?php _e( _t( 'Join Date:' ) ); ?></strong> <?php echo date('d M Y', strtotime($value['regdate'])); ?></li>
+					<li><strong><?php _e( _t( 'Posts:' ) ); ?></strong> <?php echo userPostCount($value['user_id']); ?></li>
+					<li><strong><?php _e( _t( 'Status:' ) ); ?></strong> <?php echo isUserOnline($value['username']); ?></li>
 				</ul>
 			</div><!-- /.col1-inner -->
 		</div><!-- /.col1 -->

@@ -1,0 +1,592 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: tinyForum\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-12-29 03:27-0500\n"
+"PO-Revision-Date: 2012-12-29 03:28-0500\n"
+"Last-Translator: Joshua Parker <josh@7mediaws.org>\n"
+"Language-Team:  <josh@7mediaws.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-KeywordsList: _t\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: tinyPHP/Classes/Libraries/Messages.php:26
+msgid "Your message has been sent and someone will contact you as soon as possible."
+msgstr ""
+
+#: tinyPHP/Classes/Libraries/Messages.php:27
+msgid "Sorry, all fields must be filled in before you can submit the form."
+msgstr ""
+
+#: tinyPHP/Classes/Libraries/Messages.php:28
+msgid "Sorry, your topic could not be posted. Please try again."
+msgstr ""
+
+#: tinyPHP/Classes/Libraries/Messages.php:29
+msgid "You forgot to choose a message to delete. Go back and try again."
+msgstr ""
+
+#: tinyPHP/Classes/Libraries/Messages.php:30
+msgid "Sorry, your reply could not be updated."
+msgstr ""
+
+#: tinyPHP/Classes/Libraries/Messages.php:31
+msgid "Message successfully sent!"
+msgstr ""
+
+#: tinyPHP/Classes/Libraries/Messages.php:32
+msgid "Error, couldn't send PM. Maybe wrong user."
+msgstr ""
+
+#: tinyPHP/Classes/Libraries/Messages.php:33
+msgid "Message successfully deleted!"
+msgstr ""
+
+#: tinyPHP/Classes/Libraries/Messages.php:34
+msgid "Error, couldn't delete PM!"
+msgstr ""
+
+#: tinyPHP/Classes/Libraries/Messages.php:35
+msgid "Your new member has been added and was sent an email with new account details."
+msgstr ""
+
+#: tinyPHP/Classes/Libraries/Messages.php:36
+msgid "Sorry, the new user could not be added. Please try again."
+msgstr ""
+
+#: tinyPHP/Classes/Libraries/Messages.php:37
+msgid "Your news posting has been deleted. Go back to your the main news page."
+msgstr ""
+
+#: tinyPHP/Classes/Libraries/Messages.php:38
+msgid "You forgot to choose a news posting to delete.  Go back to the main news page and try again."
+msgstr ""
+
+#: tinyPHP/Classes/Libraries/Messages.php:39
+msgid "The user has been updated successfully."
+msgstr ""
+
+#: tinyPHP/Classes/Libraries/Messages.php:40
+msgid "The user was not updated, please try again."
+msgstr ""
+
+#: tinyPHP/Classes/Libraries/Messages.php:41
+msgid "News item updated successfully."
+msgstr ""
+
+#: tinyPHP/Classes/Libraries/Messages.php:42
+msgid "An error occurred. Please check your post and try again."
+msgstr ""
+
+#: tinyPHP/Classes/Libraries/Messages.php:43
+msgid "The file you are trying to upload is not a .zip file. Please try again."
+msgstr ""
+
+#: tinyPHP/Classes/Libraries/Messages.php:44
+msgid "Your plugin was uploaded and installed properly."
+msgstr ""
+
+#: tinyPHP/Classes/Libraries/Messages.php:45
+msgid "There was a problem uploading your plugin. Please try again or check the plugin package."
+msgstr ""
+
+#: tinyPHP/Classes/Libraries/Messages.php:46
+msgid "The re-install was successful."
+msgstr ""
+
+#: tinyPHP/Classes/Libraries/Messages.php:47
+msgid "There was an error with the re-install. It is better that you download the full version and overwrite the files on your server manually."
+msgstr ""
+
+#: tinyPHP/Classes/Libraries/Messages.php:48
+msgid "Your system was upgraded to the latest version."
+msgstr ""
+
+#: tinyPHP/Classes/Libraries/Messages.php:49
+msgid "There was an error upgrading to the latest version. It is better that you download the full version and overwrite the files on your server manually."
+msgstr ""
+
+#: tinyPHP/Classes/Libraries/Messages.php:50
+msgid "Sorry, your user type was not added. Please try again."
+msgstr ""
+
+#: tinyPHP/Classes/Libraries/Messages.php:51
+msgid "There was an error uploading the file, please try again!"
+msgstr ""
+
+#: tinyPHP/Classes/Libraries/Messages.php:52
+msgid "File name is not valid or the file was more than "
+msgstr ""
+
+#: tinyPHP/Classes/Libraries/Messages.php:53
+msgid "You profile was updated successfully."
+msgstr ""
+
+#: tinyPHP/Classes/Libraries/Messages.php:54
+msgid "Your profile could not be updated. Please try again."
+msgstr ""
+
+#: tinyPHP/Classes/Libraries/Messages.php:55
+msgid "Your password has been updated."
+msgstr ""
+
+#: tinyPHP/Classes/Libraries/Messages.php:56
+msgid "Sorry, your password cannot be blank."
+msgstr ""
+
+#: tinyPHP/Classes/Libraries/Messages.php:57
+msgid "The project has been added."
+msgstr ""
+
+#: tinyPHP/Classes/Libraries/Messages.php:58
+msgid "Project name, description, type, and email must be filled out before submitting the form."
+msgstr ""
+
+#: tinyPHP/Classes/Libraries/Messages.php:59
+msgid "Your project has been updated."
+msgstr ""
+
+#: tinyPHP/Classes/Libraries/Messages.php:60
+msgid "Your project was unable to be updated. Please try again."
+msgstr ""
+
+#: tinyPHP/Classes/Libraries/Messages.php:61
+msgid "Your username or password was entered incorreclty. Please go back and try again."
+msgstr ""
+
+#: tinyPHP/Forums/Helpers/ext_forum_helper.php:107
+msgid "There is currently "
+msgstr ""
+
+#: tinyPHP/Forums/Helpers/ext_forum_helper.php:107
+msgid " User Online"
+msgstr ""
+
+#: tinyPHP/Forums/Helpers/ext_forum_helper.php:109
+msgid "There are currently "
+msgstr ""
+
+#: tinyPHP/Forums/Helpers/ext_forum_helper.php:109
+msgid " Users Online"
+msgstr ""
+
+#: tinyPHP/Forums/Views/category/create.php:42
+msgid "Create a new forum"
+msgstr ""
+
+#: tinyPHP/Forums/Views/category/create.php:46
+#: tinyPHP/Forums/Views/category/edit.php:47
+msgid "Forum Name:"
+msgstr ""
+
+#: tinyPHP/Forums/Views/category/create.php:47
+#: tinyPHP/Forums/Views/category/edit.php:48
+msgid "Can Users Post to this Forum?:"
+msgstr ""
+
+#: tinyPHP/Forums/Views/category/create.php:50
+#: tinyPHP/Forums/Views/category/edit.php:51
+msgid "Yes"
+msgstr ""
+
+#: tinyPHP/Forums/Views/category/create.php:51
+#: tinyPHP/Forums/Views/category/edit.php:52
+msgid "No"
+msgstr ""
+
+#: tinyPHP/Forums/Views/category/create.php:53
+#: tinyPHP/Forums/Views/category/edit.php:54
+msgid "Sort:"
+msgstr ""
+
+#: tinyPHP/Forums/Views/category/create.php:54
+#: tinyPHP/Forums/Views/category/edit.php:55
+msgid "Description:"
+msgstr ""
+
+#: tinyPHP/Forums/Views/category/create.php:57
+msgid "Add Forum"
+msgstr ""
+
+#: tinyPHP/Forums/Views/category/edit.php:43
+#: tinyPHP/Forums/Views/category/edit.php:59
+msgid "Edit Forum"
+msgstr ""
+
+#: tinyPHP/Forums/Views/category/index.php:43
+msgid "Home"
+msgstr ""
+
+#: tinyPHP/Forums/Views/category/index.php:44
+msgid "Main Forum"
+msgstr ""
+
+#: tinyPHP/Forums/Views/category/index.php:53
+msgid "Start new topic"
+msgstr ""
+
+#: tinyPHP/Forums/Views/category/index.php:66
+msgid "Forum:"
+msgstr ""
+
+#: tinyPHP/Forums/Views/category/index.php:75
+msgid "Title/Thread Starter"
+msgstr ""
+
+#: tinyPHP/Forums/Views/category/index.php:76
+msgid "Last Post by"
+msgstr ""
+
+#: tinyPHP/Forums/Views/category/index.php:97
+msgid "Delete"
+msgstr ""
+
+#: tinyPHP/Forums/Views/category/index.php:103
+msgid "Started by"
+msgstr ""
+
+#: tinyPHP/Forums/Views/category/index.php:118
+msgid "<p>No posts</p>"
+msgstr ""
+
+#: tinyPHP/Forums/Views/category/success.php:26
+msgid "Success"
+msgstr ""
+
+#: tinyPHP/Forums/Views/category/success.php:26
+msgid "Your forum was saved/updated sucessfully."
+msgstr ""
+
+#: tinyPHP/Forums/Views/error/category.php:23
+#: tinyPHP/Forums/Views/error/login.php:23
+#: tinyPHP/Forums/Views/error/post.php:23
+#: tinyPHP/Forums/Views/error/profile.php:23
+#: tinyPHP/Forums/Views/error/register.php:23
+#: tinyPHP/Forums/Views/error/reply.php:23
+msgid "Error"
+msgstr ""
+
+#: tinyPHP/Forums/Views/error/category.php:23
+msgid "The forum could not be saved/updated. Make sure to fill out the title, permission and description of your forum."
+msgstr ""
+
+#: tinyPHP/Forums/Views/error/index.php:26
+msgid "404 Error"
+msgstr ""
+
+#: tinyPHP/Forums/Views/error/index.php:27
+msgid "It appears that the page you are looking for is no longer available."
+msgstr ""
+
+#: tinyPHP/Forums/Views/error/index.php:28
+msgid "Use the navigation bar above to navigate to a different page."
+msgstr ""
+
+#: tinyPHP/Forums/Views/error/login.php:23
+msgid "There was an error with your login. Please go back and try again."
+msgstr ""
+
+#: tinyPHP/Forums/Views/error/post.php:23
+msgid "There was an error with updating/saving your post. Please go back and try again."
+msgstr ""
+
+#: tinyPHP/Forums/Views/error/profile.php:23
+msgid "There was an error with updating/saving your profile. Make sure that your email is not blank."
+msgstr ""
+
+#: tinyPHP/Forums/Views/error/register.php:23
+msgid "There was a registration error. Please go back and try again."
+msgstr ""
+
+#: tinyPHP/Forums/Views/error/reply.php:23
+msgid "Your reply could not be saved. Please go back and make sure to fill out a reply message."
+msgstr ""
+
+#: tinyPHP/Forums/Views/error/settings.php:23
+msgid "Your settings could not be saved. Please make sure that the admin email is not blank."
+msgstr ""
+
+#: tinyPHP/Forums/Views/error/topic.php:23
+msgid "There was an error with updating/saving your topic. Make sure to fill out a title, choose the correct forum, and enter your message."
+msgstr ""
+
+#: tinyPHP/Forums/Views/error/user.php:23
+msgid "You cannot view a user's profile unless you are logged in."
+msgstr ""
+
+#: tinyPHP/Forums/Views/footer/index.php:42
+msgid "Copyright &copy; 2012 Designed by RohitCreations, Coded by Templatation. All rights reserved."
+msgstr ""
+
+#: tinyPHP/Forums/Views/header/index.php:60
+msgid "Howdy"
+msgstr ""
+
+#: tinyPHP/Forums/Views/header/index.php:61
+msgid "Logout"
+msgstr ""
+
+#: tinyPHP/Forums/Views/header/index.php:63
+#: tinyPHP/Forums/Views/login/index.php:26
+#: tinyPHP/Forums/Views/login/index.php:36
+msgid "Login"
+msgstr ""
+
+#: tinyPHP/Forums/Views/header/index.php:64
+#: tinyPHP/Forums/Views/register/index.php:26
+#: tinyPHP/Forums/Views/register/index.php:36
+msgid "Register"
+msgstr ""
+
+#: tinyPHP/Forums/Views/header/index.php:83
+msgid "Browse All Pages"
+msgstr ""
+
+#: tinyPHP/Forums/Views/header/index.php:85
+msgid "Forum Home"
+msgstr ""
+
+#: tinyPHP/Forums/Views/header/index.php:88
+#: tinyPHP/Forums/Views/settings/index.php:26
+msgid "Forum Settings"
+msgstr ""
+
+#: tinyPHP/Forums/Views/header/index.php:89
+msgid "Create a forum"
+msgstr ""
+
+#: tinyPHP/Forums/Views/header/index.php:91
+msgid "Edit Profile"
+msgstr ""
+
+#: tinyPHP/Forums/Views/header/index.php:92
+msgid "Start a topic"
+msgstr ""
+
+#: tinyPHP/Forums/Views/index/index.php:48
+msgid "Forums"
+msgstr ""
+
+#: tinyPHP/Forums/Views/index/index.php:56
+msgid "Forum Name"
+msgstr ""
+
+#: tinyPHP/Forums/Views/index/index.php:57
+msgid "Last Topic"
+msgstr ""
+
+#: tinyPHP/Forums/Views/index/index.php:98
+msgid "by:"
+msgstr ""
+
+#: tinyPHP/Forums/Views/index/index.php:102
+msgid "<p>No topics</p>"
+msgstr ""
+
+#: tinyPHP/Forums/Views/index/index.php:119
+msgid "What's Going On?"
+msgstr ""
+
+#: tinyPHP/Forums/Views/index/index.php:126
+msgid "Current Forum Info"
+msgstr ""
+
+#: tinyPHP/Forums/Views/index/index.php:134
+msgid "Currently Active Users"
+msgstr ""
+
+#: tinyPHP/Forums/Views/index/index.php:144
+msgid "Forum Statistics"
+msgstr ""
+
+#: tinyPHP/Forums/Views/index/index.php:146
+msgid "Threads:"
+msgstr ""
+
+#: tinyPHP/Forums/Views/index/index.php:147
+msgid "Posts:"
+msgstr ""
+
+#: tinyPHP/Forums/Views/index/index.php:152
+msgid "Welcome to our newest member(s)"
+msgstr ""
+
+#: tinyPHP/Forums/Views/index/index.php:156
+msgid "Latest Forum Topic:"
+msgstr ""
+
+#: tinyPHP/Forums/Views/login/index.php:31
+#: tinyPHP/Forums/Views/profile/index.php:27
+#: tinyPHP/Forums/Views/register/index.php:31
+msgid "Username:"
+msgstr ""
+
+#: tinyPHP/Forums/Views/login/index.php:32
+#: tinyPHP/Forums/Views/profile/index.php:35
+#: tinyPHP/Forums/Views/register/index.php:33
+msgid "Password:"
+msgstr ""
+
+#: tinyPHP/Forums/Views/login/index.php:33
+msgid "Remember Me:"
+msgstr ""
+
+#: tinyPHP/Forums/Views/login/success.php:26
+msgid "You are now logged in. You will be redirected in a few seconds."
+msgstr ""
+
+#: tinyPHP/Forums/Views/post/index.php:45
+msgid "Edit post"
+msgstr ""
+
+#: tinyPHP/Forums/Views/post/index.php:53
+msgid "Save"
+msgstr ""
+
+#: tinyPHP/Forums/Views/profile/index.php:23
+msgid "Profile"
+msgstr ""
+
+#: tinyPHP/Forums/Views/profile/index.php:28
+msgid "First Name:"
+msgstr ""
+
+#: tinyPHP/Forums/Views/profile/index.php:29
+msgid "Last Name:"
+msgstr ""
+
+#: tinyPHP/Forums/Views/profile/index.php:30
+#: tinyPHP/Forums/Views/register/index.php:32
+msgid "Email:"
+msgstr ""
+
+#: tinyPHP/Forums/Views/profile/index.php:31
+#: tinyPHP/Forums/Views/settings/index.php:42
+msgid "Facebook URL:"
+msgstr ""
+
+#: tinyPHP/Forums/Views/profile/index.php:32
+msgid "Twitter URL:"
+msgstr ""
+
+#: tinyPHP/Forums/Views/profile/index.php:33
+msgid "Goolge+ URL:"
+msgstr ""
+
+#: tinyPHP/Forums/Views/profile/index.php:34
+msgid "LinkedIn URL:"
+msgstr ""
+
+#: tinyPHP/Forums/Views/profile/index.php:37
+msgid "Save Profile"
+msgstr ""
+
+#: tinyPHP/Forums/Views/profile/success.php:26
+msgid "Your profile was updated successfully."
+msgstr ""
+
+#: tinyPHP/Forums/Views/register/success.php:23
+msgid "Registration was successful. You may now login with your username and password."
+msgstr ""
+
+#: tinyPHP/Forums/Views/settings/index.php:30
+msgid "Admin Email:"
+msgstr ""
+
+#: tinyPHP/Forums/Views/settings/index.php:32
+msgid "Threads Per Page:"
+msgstr ""
+
+#: tinyPHP/Forums/Views/settings/index.php:33
+msgid "Posts Per Page:"
+msgstr ""
+
+#: tinyPHP/Forums/Views/settings/index.php:34
+msgid "Cookie TTL:"
+msgstr ""
+
+#: tinyPHP/Forums/Views/settings/index.php:35
+msgid "Cookie Path:"
+msgstr ""
+
+#: tinyPHP/Forums/Views/settings/index.php:36
+msgid "Enable Caching:"
+msgstr ""
+
+#: tinyPHP/Forums/Views/settings/index.php:43
+msgid "Flickr URL:"
+msgstr ""
+
+#: tinyPHP/Forums/Views/settings/index.php:44
+msgid "Google+ URL:"
+msgstr ""
+
+#: tinyPHP/Forums/Views/settings/index.php:45
+msgid "Twitter Username:"
+msgstr ""
+
+#: tinyPHP/Forums/Views/settings/index.php:46
+msgid "Vimeo URL:"
+msgstr ""
+
+#: tinyPHP/Forums/Views/settings/index.php:48
+msgid "Save Settings"
+msgstr ""
+
+#: tinyPHP/Forums/Views/settings/success.php:26
+msgid "Your settings were saved/updated successfully. You will be redirected shortly."
+msgstr ""
+
+#: tinyPHP/Forums/Views/topic/create.php:44
+msgid "Create a new topic"
+msgstr ""
+
+#: tinyPHP/Forums/Views/topic/create.php:48
+msgid "Subject:"
+msgstr ""
+
+#: tinyPHP/Forums/Views/topic/create.php:59
+msgid "Post Topic"
+msgstr ""
+
+#: tinyPHP/Forums/Views/topic/edit.php:45
+msgid "Edit topic"
+msgstr ""
+
+#: tinyPHP/Forums/Views/topic/edit.php:49
+msgid "Title:"
+msgstr ""
+
+#: tinyPHP/Forums/Views/topic/index.php:66
+msgid "Viewing"
+msgstr ""
+
+#: tinyPHP/Forums/Views/topic/index.php:95
+#: tinyPHP/Forums/Views/user/index.php:44
+msgid "Join Date:"
+msgstr ""
+
+#: tinyPHP/Forums/Views/topic/index.php:97
+#: tinyPHP/Forums/Views/user/index.php:46
+msgid "Status:"
+msgstr ""
+
+#: tinyPHP/Forums/Views/topic/index.php:148
+msgid "Quick Reply"
+msgstr ""
+
+#: tinyPHP/Forums/Views/topic/index.php:149
+msgid "Reply To This Topic"
+msgstr ""
+
+#: tinyPHP/Forums/Views/topic/index.php:155
+msgid "Post Quick Reply"
+msgstr ""
+
+#: tinyPHP/Forums/Views/topic/success.php:26
+msgid "Your topic was saved. You will be redirected shortly."
+msgstr ""
+

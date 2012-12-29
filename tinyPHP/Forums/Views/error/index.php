@@ -23,9 +23,9 @@
 		<td align="center" valign="middle">
 			<div class="error-obj">
 				<div class="box01">
-					<h1><?php echo _t( '404 Error' ); ?></h1>
-					<?php echo _t( 'It appears that the page you are looking for is no longer available.' ); ?><br/>
-					<?php echo _t( 'Use the navigation bar above to navigate to a different page.' ); ?> 
+					<h1><?php _e( _t( '404 Error' ) ); ?></h1>
+					<?php _e( _t( 'It appears that the page you are looking for is no longer available.' ) ); ?><br/>
+					<?php _e( _t( 'Use the navigation bar above to navigate to a different page.' ) ); ?> 
 				</div>
 			</div>
 		</td>

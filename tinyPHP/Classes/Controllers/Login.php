@@ -5,14 +5,14 @@
  *  
  * PHP 5
  *
- * tinyForum(tm) : Simple & Lightweight Forum (http://tinyphp.us/downloads/tinyForum/)
+ * tinyForum(tm) : Simple & Lightweight Forum (http://tinyforum.us/site/index)
  * Copyright 2012, 7 Media Web Solutions, LLC (http://www.7mediaws.org/)
  *
  * Licensed under The MIT License
  * Redistributions of files must retain the above copyright notice.
  *
  * @copyright Copyright 2012, 7 Media Web Solutions, LLC (http://www.7mediaws.org/)
- * @link http://tinyphp.us/downloads/tinyForum/ tinyForum(tm) Project
+ * @link http://tinyforum.us/site/index tinyForum(tm) Project
  * @since tinyForum(tm) v 0.1
  * @license MIT License (http://www.opensource.org/licenses/mit-license.php)
  */
@@ -25,19 +25,23 @@ class Login extends \tinyPHP\Classes\Core\Controller {
 
 	public function __construct() {
 		$this->_auth = new \tinyPHP\Classes\Libraries\Cookies();
-		
 		if($this->_auth->isUserLoggedIn()) { redirect(BASE_URL); }
-		
 		parent::__construct();
 		ob_start();
 	}
 	
 	public function index() {
-		$this->view->render('login/index');
+		$this->view->staticTitle = array('Login');
+		$this->view->render('header/index',true);
+		$this->view->render('login/index',true);
+		$this->view->render('footer/index',true);
 	}
 	
 	public function success() {
-		$this->view->render('login/success');
+		$this->view->staticTitle = array('Login Success');
+		$this->view->render('header/index',true);
+		$this->view->render('login/success',true);
+		$this->view->render('header/index',true);
 	}
 	
 	public function run() {

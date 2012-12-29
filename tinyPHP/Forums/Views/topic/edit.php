@@ -1,19 +1,19 @@
 <?php if ( ! defined('BASE_PATH') ) exit('No direct script access allowed');
 /**
  *
- * Main Index View
+ * Edit Topic View
  *  
  * PHP 5
  *
- * tinyPHP(tm) : Simple & Lightweight MVC Framework (http://tinyphp.us/)
+ * tinyForum(tm) : Simple & Lightweight Forum (http://tinyforum.us/site/index)
  * Copyright 2012, 7 Media Web Solutions, LLC (http://www.7mediaws.org/)
  *
  * Licensed under The MIT License
  * Redistributions of files must retain the above copyright notice.
  *
  * @copyright Copyright 2012, 7 Media Web Solutions, LLC (http://www.7mediaws.org/)
- * @link http://tinyphp.us/ tinyPHP(tm) Project
- * @since tinyPHP(tm) v 0.1
+ * @link http://tinyforum.us/site/index tinyForum(tm) Project
+ * @since tinyForum(tm) v 0.1
  * @license MIT License (http://www.opensource.org/licenses/mit-license.php)
  */
 
@@ -42,17 +42,17 @@
 	foreach($this->editTopic as $key => $value) { ?>
 <!-- /.Start of reply object -->
 <div class="reply-obj">
-	<div class="t1">Edit topic</div>
+	<div class="t1"><?php _e( _t( 'Edit topic' ) ); ?></div>
 	<div class="t2"></div>
 	<div class="box01">
 		<form method="post" action="<?php echo BASE_URL; ?>topic/editSave">
-		<div>Title: <input class="text" type="text" name="topic_subject" value="<?php echo $value['topic_subject']; ?>" /></div>
+		<div><?php _e( _t( 'Title:' ) ); ?> <input class="text" type="text" name="topic_subject" value="<?php echo $value['topic_subject']; ?>" /></div>
 		<div><textarea id="postcontent" width="904" height="131" name="post_content"><?php echo $value['post_content']; ?></textarea></div>
 		<div><input class="text" type="hidden" name="tID" value="<?php echo $value['topic_id']; ?>" /></div>
 		<div><input class="text" type="hidden" name="fID" value="<?php echo $value['topic_fid']; ?>" /></div>
 		<div><input class="text" type="hidden" name="pID" value="<?php echo $value['post_id']; ?>" /></div>
 		<div class="cols1 clearfix">
-			<div class="col3"><input class="a2" type="submit" value="Save" /></div>
+			<div class="col3"><input class="a2" type="submit" value="<?php _e( _t( 'Save' ) ); ?>" /></div>
 		</div>
 		</form>
 	</div><!-- /.box01 -->

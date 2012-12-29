@@ -1,7 +1,7 @@
-<?php if ( ! defined('BASE_PATH') ) exit('No direct script access allowed');
+<?php namespace tinyPHP\Classes\Controllers;
 /**
  *
- * User Profile Error View
+ * Header Controller
  *  
  * PHP 5
  *
@@ -16,10 +16,15 @@
  * @since tinyForum(tm) v 0.1
  * @license MIT License (http://www.opensource.org/licenses/mit-license.php)
  */
-?>
 
-<div class="error-obj">
-	<div class="box01">
-	<span class="s1"><?php _e( _t( 'Error' ) ); ?> </span> <?php _e( _t( 'You cannot view a user\'s profile unless you are logged in.' ) ) ?> 
-	</div>
-</div>
+if ( ! defined('BASE_PATH') ) exit('No direct script access allowed');
+
+class Header extends \tinyPHP\Classes\Core\Controller {
+
+	public function __construct() {}
+	
+	public function index() {
+		$this->view->render('header/index');
+	}
+	
+}

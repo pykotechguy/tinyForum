@@ -5,15 +5,15 @@
  *  
  * PHP 5
  *
- * tinyPHP(tm) : Simple & Lightweight MVC Framework (http://tinyphp.us/)
+ * tinyForum(tm) : Simple & Lightweight Forum (http://tinyforum.us/site/index)
  * Copyright 2012, 7 Media Web Solutions, LLC (http://www.7mediaws.org/)
  *
  * Licensed under The MIT License
  * Redistributions of files must retain the above copyright notice.
  *
  * @copyright Copyright 2012, 7 Media Web Solutions, LLC (http://www.7mediaws.org/)
- * @link http://tinyphp.us/ tinyPHP(tm) Project
- * @since tinyPHP(tm) v 0.1
+ * @link http://tinyforum.us/site/index tinyForum(tm) Project
+ * @since tinyForum(tm) v 0.1
  * @license MIT License (http://www.opensource.org/licenses/mit-license.php)
  */
 
@@ -130,6 +130,16 @@ class IndexModel {
 		}
 	}
 	
+	public function dynamicForumTitle($id) {
+		$sql = $this->_db->query( "SELECT * FROM ".TP."forums WHERE fid = '$id'" );
+		if($sql->num_rows > 0) {
+			while($row = $sql->fetch_assoc()) {
+				$title = array($row['name'] . ' Forum');
+			}
+			return $title;
+		}
+	}
+	
 	public function currentForum($id) {
 		$sql = $this->_db->query( "SELECT * 
 						  	FROM ".
@@ -219,6 +229,16 @@ class IndexModel {
 		}
 	}
 	
+	public function dynamicTopicTitle($id) {
+		$sql = $this->_db->query( "SELECT * FROM ".TP."topics WHERE topic_id = '$id'");
+		if($sql->num_rows > 0) {
+			while($row = $sql->fetch_assoc()) {
+				$title = array($row['topic_subject']);
+			}
+			return $title;
+		}
+	}
+	
 	public function topicTitle($id) {
 		$sql = $this->_db->query( "SELECT 
 								post_id,
@@ -251,6 +271,16 @@ class IndexModel {
 		}
 	}
 	
+	public function dynamicUserTitle($id) {
+		$q = $this->_db->select( TP."users","*","user_id = '$id'" );
+		if($q->num_rows > 0) {
+			while($row = $q->fetch_assoc()) {
+				$title = array('Viewing ' . $row['username'] .'\'s Profile');
+			}
+			return $title;
+		}
+	}
+	
 	public function getPost($id) {
 		$q = $this->_db->query( "SELECT * FROM " . TP . "posts WHERE post_id = '$id'" );
 		if($q->num_rows > 0) {
@@ -258,6 +288,16 @@ class IndexModel {
 				$array[] = $r;
 			}
 			return $array;
+		}
+	}
+	
+	public function dynamicPostTitle($id) {
+		$q = $this->_db->query( "SELECT * FROM " . TP . "posts WHERE post_id = '$id'" );
+		if($q->num_rows > 0) {
+			while($row = $q->fetch_assoc()) {
+				$title = array('Editing Post #' . $row['post_id']);
+			}
+			return $title;
 		}
 	}
 	

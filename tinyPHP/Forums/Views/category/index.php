@@ -1,19 +1,19 @@
 <?php if ( ! defined('BASE_PATH')) exit('No direct script access allowed');
 /**
  *
- * Main Category View
+ * Main Forum View
  *  
  * PHP 5
  *
- * tinyPHP(tm) : Simple & Lightweight MVC Framework (http://tinyphp.us/)
+ * tinyForum(tm) : Simple & Lightweight Forum (http://tinyforum.us/site/index)
  * Copyright 2012, 7 Media Web Solutions, LLC (http://www.7mediaws.org/)
  *
  * Licensed under The MIT License
  * Redistributions of files must retain the above copyright notice.
  *
  * @copyright Copyright 2012, 7 Media Web Solutions, LLC (http://www.7mediaws.org/)
- * @link http://tinyphp.us/ tinyPHP(tm) Project
- * @since tinyPHP(tm) v 0.1
+ * @link http://tinyforum.us/site/index tinyForum(tm) Project
+ * @since tinyForum(tm) v 0.1
  * @license MIT License (http://www.opensource.org/licenses/mit-license.php)
  */
 
@@ -40,8 +40,8 @@ $(document).ready(function(){
 	<!-- Start breadcrumb -->
 	<div class="breadcrumb">
 	<ul>
-		<li><a href="<?php echo BASE_URL; ?>">Home</a></li>
-		<li><a class="active" href="<?php echo BASE_URL; ?>index/category/<?php echo $value['topic_fid']; ?>">Main Forum</a></li>
+		<li><a href="<?php echo BASE_URL; ?>"><?php _e( _t( 'Home' ) ); ?></a></li>
+		<li><a class="active" href="<?php echo BASE_URL; ?>index/category/<?php echo $value['topic_fid']; ?>"><?php _e( _t( 'Main Forum' ) ); ?></a></li>
 	</ul>
 	</div><!-- /.breadcrumb -->
 <?php } ?>
@@ -50,7 +50,7 @@ $(document).ready(function(){
 <div class="new-obj">
 	<div class="cols1 clearfix">
 		<?php if($auth->isUserLoggedIn()) { ?>
-		<div class="floatleft"><a class="new" href="<?php echo BASE_URL; ?>topic/create/">Start new topic</a></div>
+		<div class="floatleft"><a class="new" href="<?php echo BASE_URL; ?>topic/create/"><?php _e( _t( 'Start new topic' ) ); ?></a></div>
 		<?php } ?>
 	</div><!-- /.cols1 -->
 </div><!-- /.new-obj -->
@@ -63,7 +63,7 @@ $(document).ready(function(){
 	<div class="thread">
 		<div class="box01">
 			<div class="cols1 clearfix">
-				<div class="col1"><div class="t1">Forum: <?php foreach($this->curForum as $k => $v) { echo $v['name']; } ?></div></div>
+				<div class="col1"><div class="t1"><?php _e( _t( 'Forum:' ) ); ?> <?php foreach($this->curForum as $k => $v) { echo $v['name']; } ?></div></div>
 				<div class="col2"><?php foreach($this->curForum as $k => $v) { echo $v['description']; } ?></div>
 				<div class="col3"></div>
 			</div><!-- /.cols1 -->
@@ -72,8 +72,8 @@ $(document).ready(function(){
 		<div class="posts">
 			<div class="box02">
 				<div class="cols2 clearfix">
-					<div class="col1">Title/Thread Starter</div>
-					<div class="col2">Last Post by</div>
+					<div class="col1"><?php _e( _t( 'Title/Thread Starter' ) ); ?></div>
+					<div class="col2"><?php _e( _t( 'Last Post by' ) ); ?></div>
 				</div>
 			</div>
 			<ul class="posts content">
@@ -94,13 +94,13 @@ $(document).ready(function(){
 								<form method="post" action="<?php echo BASE_URL; ?>topic/delete" style="vertical-align:top">
 									<input type="hidden" name="fID" value="<?php echo $value['topic_fid']; ?>" />
 									<input type="hidden" name="tID" value="<?php echo $value['topic_id']; ?>" />
-									<input type="image" src="<?php echo BASE_URL; ?>static/images/bg55.png" name="delete" value="Delete" />
+									<input type="image" src="<?php echo BASE_URL; ?>static/images/bg55.png" name="delete" value="<?php _e( _t( 'Delete' ) ); ?>" />
 								</form>
 								</div>
 							<?php } ?>
 						
 						</div>
-						<div class="by">Started by <a href="<?php echo BASE_URL; ?>index/user/<?php echo $value['topic_by']; ?>"><?php echo getUserMeta($value['topic_by'], 'username'); ?></a>, 
+						<div class="by"><?php _e( _t( 'Started by' ) ); ?> <a href="<?php echo BASE_URL; ?>index/user/<?php echo $value['topic_by']; ?>"><?php echo getUserMeta($value['topic_by'], 'username'); ?></a>, 
 						<?php echo date('d M Y', strtotime($value['topic_date'])); ?>
 						</div>
 						</div><!-- /.col2 -->
@@ -115,7 +115,7 @@ $(document).ready(function(){
 							<?php if(getPostMeta($value['topic_id'], 'post_date') != '') { ?>
 							<img src="<?php echo BASE_URL; ?>static/images/icon10.png" alt="" width="14" height="14" /> <?php echo date('d M Y', strtotime(getPostMeta($value['topic_id'], 'post_date'))); ?> 
 							<img src="<?php echo BASE_URL; ?>static/images/icon11.png" alt="" width="15" height="14" /> <?php echo date('g:i A', strtotime(getPostMeta($value['topic_id'], 'post_date'))); ?>
-							<?php } else { echo '<p>No posts</p>'; } ?>
+							<?php } else { _e( _t( '<p>No posts</p>' ) ); } ?>
 						</div>
 						</div>
 						</div><!-- /.col3 -->

@@ -5,14 +5,14 @@
  *  
  * PHP 5
  *
- * tinyForum(tm) : Simple & Lightweight Forum (http://tinyphp.us/downloads/tinyForum/)
+ * tinyForum(tm) : Simple & Lightweight Forum (http://tinyforum.us/site/index)
  * Copyright 2012, 7 Media Web Solutions, LLC (http://www.7mediaws.org/)
  *
  * Licensed under The MIT License
  * Redistributions of files must retain the above copyright notice.
  *
  * @copyright Copyright 2012, 7 Media Web Solutions, LLC (http://www.7mediaws.org/)
- * @link http://tinyphp.us/downloads/tinyForum/ tinyForum(tm) Project
+ * @link http://tinyforum.us/site/index tinyForum(tm) Project
  * @since tinyForum(tm) v 0.1
  * @license MIT License (http://www.opensource.org/licenses/mit-license.php)
  */
@@ -26,7 +26,7 @@ defined( 'LOCALE_DIR' ) 		or define( 'LOCALE_DIR', SYS_PATH . 'Locale' );
 defined( 'DEFAULT_LOCALE' )		or define( 'DEFAULT_LOCALE', '');
 defined( 'ENCODING' )			or define( 'ENCODING', 'UTF-8');
 defined( 'CURRENT_VERSION' )	or define( 'CURRENT_VERSION', '0.4');
-defined( 'TFORUM_VERSION' )		or define( 'TFORUM_VERSION', '0.6.BETA');
+defined( 'TFORUM_VERSION' )		or define( 'TFORUM_VERSION', '0.7.BETA');
 require( SYS_PATH . 'Config/constants.php');
 require( SYS_PATH . 'application.php');
 

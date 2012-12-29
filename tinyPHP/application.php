@@ -1,4 +1,4 @@
-<?php if ( ! defined('BASE_PATH')) exit('No direct script access allowed');
+<?php if ( ! defined('BASE_PATH') ) exit('No direct script access allowed');
 /**
  *
  * AutoLoad
@@ -43,7 +43,7 @@ $locale = (isset($_GET['lang']))? $_GET['lang'] : DEFAULT_LOCALE;
 T_setlocale(LC_MESSAGES, $locale);
 
 /** Set the text domain as 'tinyPHP' */
-$domain = 'tinyPHP';
+$domain = 'tinyForum';
 bindtextdomain($domain, LOCALE_DIR);
 
 /** bind_textdomain_codeset is supported only in PHP 4.2.0+ */

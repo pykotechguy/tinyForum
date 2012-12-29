@@ -5,15 +5,15 @@
  *  
  * PHP 5
  *
- * tinyPHP(tm) : Simple & Lightweight MVC Framework (http://tinyphp.us/)
+ * tinyForum(tm) : Simple & Lightweight Forum (http://tinyforum.us/site/index)
  * Copyright 2012, 7 Media Web Solutions, LLC (http://www.7mediaws.org/)
  *
  * Licensed under The MIT License
  * Redistributions of files must retain the above copyright notice.
  *
  * @copyright Copyright 2012, 7 Media Web Solutions, LLC (http://www.7mediaws.org/)
- * @link http://tinyphp.us/ tinyPHP(tm) Project
- * @since tinyPHP(tm) v 0.1
+ * @link http://tinyforum.us/site/index tinyForum(tm) Project
+ * @since tinyForum(tm) v 0.1
  * @license MIT License (http://www.opensource.org/licenses/mit-license.php)
  */
 
@@ -43,7 +43,7 @@ class PostModel {
 			$pID = $this->_db->escape((int)$data['pid']);
 			$tID = $this->_db->escape((int)$data['tid']);
 			
-			$this->_db->query( "UPDATE ".TP."posts SET post_content='$content' WHERE post_id = '$pID' AND post_topic = '$tID'" );
+			$this->_db->query( "UPDATE ".TP."posts SET post_content='$content' WHERE post_id = '$pID' AND post_topic = '$tID' AND post_by = '".$this->_auth->getUserField('user_id')."'" );
 			
 			$this->_cache->purge();
 			redirect(BASE_URL . 'index/topic/' . $data['tid']);

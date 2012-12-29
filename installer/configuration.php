@@ -790,7 +790,7 @@
 		// messages, just a demonstration on special keywords
         'company' => '7 Media Web Solutions, LLC', 
         'product' => 'tinyForum',
-        'version' => '0.6.BETA',
+        'version' => '0.7.BETA',
 
 		// These keywords are used with Timezone and Language steps
 		'timezone' => '0',
