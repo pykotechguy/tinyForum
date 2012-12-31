@@ -30,10 +30,24 @@ class Login extends \tinyPHP\Classes\Core\Controller {
 		ob_start();
 	}
 	
+	public function confirm() {
+		$this->view->staticTitle = array('Password Reset Confirmation');
+		$this->view->render('header/index',true);
+		$this->view->render('login/confirm',true);
+		$this->view->render('footer/index',true);
+	}
+	
 	public function index() {
 		$this->view->staticTitle = array('Login');
 		$this->view->render('header/index',true);
 		$this->view->render('login/index',true);
+		$this->view->render('footer/index',true);
+	}
+	
+	public function forgot() {
+		$this->view->staticTitle = array('Reset Password');
+		$this->view->render('header/index',true);
+		$this->view->render('login/forgot',true);
 		$this->view->render('footer/index',true);
 	}
 	
@@ -50,5 +64,11 @@ class Login extends \tinyPHP\Classes\Core\Controller {
 		$data['password'] = $_POST['password'];
 		$data['remember'] = isset($_POST['remember']);
 		$this->model->run($data);
+	}
+	
+	public function resetPass() {
+		$data = array();
+		$data['email'] = $_POST['email'];
+		$this->model->resetPass($data);
 	}
 }

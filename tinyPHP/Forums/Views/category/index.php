@@ -23,10 +23,17 @@ $auth = new \tinyPHP\Classes\Libraries\Cookies();
 echo '<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>'."\n";
 
 if (isset($this->js)) {
-        foreach ($this->js as $js){
-            _e( '<script type="text/javascript" src="' . BASE_URL . 'static/js/'.$js.'"></script>' . "\n" );
-        }
+    foreach ($this->js as $js) {
+        _e( '<script type="text/javascript" src="' . BASE_URL . 'static/js/'.$js.'"></script>' . "\n" );
     }
+}
+
+foreach($this->curForum as $k => $v) {
+	$v['name'] = str_replace(" ", "", $v['name']);
+	$cache = new \tinyPHP\Classes\Libraries\Cache($hook->get_option('cacheTTL'), BASE_PATH.'tmp/cache/', $v['name']);
+}
+	
+	if(!$cache->setCache( $hook->get_option('cache') )) :
 
 ?>
 
@@ -128,3 +135,4 @@ $(document).ready(function(){
 </div><!-- /.threads-obj -->
 </div>
 <!-- End thread listings area -->
+<?php endif; echo $cache->getCache( $hook->get_option('cache') );

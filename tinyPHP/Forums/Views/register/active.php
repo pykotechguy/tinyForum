@@ -1,7 +1,7 @@
 <?php if ( ! defined('BASE_PATH') ) exit('No direct script access allowed');
 /**
  *
- * Register Success View
+ * Active Account View
  *  
  * PHP 5
  *
@@ -17,9 +17,8 @@
  * @license MIT License (http://www.opensource.org/licenses/mit-license.php)
  */
 ?>
-
-<div class="success-obj">
+<div class="notice-obj">
 	<div class="box01">
-	<span class="s1"><?php _e( _t( 'Success' ) ); ?></span><?php _e( _t( 'Thank you for registering. The next step is to check your email in order to activate you account.' ) ); ?> 
+	<span class="s1"><?php _e( _t( 'Notice' ) ); ?></span><?php _e( _t( 'You account is already active.' ) ); ?>
 	</div>
 </div>

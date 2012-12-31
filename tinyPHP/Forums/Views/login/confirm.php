@@ -1,7 +1,7 @@
 <?php if ( ! defined('BASE_PATH') ) exit('No direct script access allowed');
 /**
  *
- * Register Success View
+ * Login Success View
  *  
  * PHP 5
  *
@@ -20,6 +20,6 @@
 
 <div class="success-obj">
 	<div class="box01">
-	<span class="s1"><?php _e( _t( 'Success' ) ); ?></span><?php _e( _t( 'Thank you for registering. The next step is to check your email in order to activate you account.' ) ); ?> 
+	<span class="s1"><?php _e( _t( 'Success' ) ); ?></span><?php _e( _t( 'Your password was reset successfully. Check your email for your new password.' ) ); ?> 
 	</div>
 </div>

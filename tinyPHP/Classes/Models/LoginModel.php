@@ -28,6 +28,7 @@ class LoginModel {
 	private $_auth;
 	private $_val;
 	private $_cache;
+	private $_email;
 	
 	public function __construct() {
 		$this->_hook = new \tinyPHP\Classes\Libraries\Hooks();
@@ -35,6 +36,7 @@ class LoginModel {
 		$this->_db = new \tinyPHP\Classes\Core\MySQLiDriver();
 		$this->_val = new \tinyPHP\Classes\Core\Val();
 		$this->_cache = new \tinyPHP\Classes\Libraries\Cache('',BASE_PATH.'tmp/cache/','');
+		$this->_email = new \tinyPHP\Classes\Libraries\Email();
 		
 		$this->_db->conn();
 		$this->_enc = time()+999999*(1000000*time());
@@ -59,7 +61,7 @@ class LoginModel {
 			
 			$this->_db->query("UPDATE " . TP . "users SET auth_token = '" . $auth . "' WHERE username = '$user' AND active = '1'");
 			
-			$query = $this->_db->query( "SELECT * FROM " . TP . "users WHERE username = '$user'" );
+			$query = $this->_db->query( "SELECT * FROM " . TP . "users WHERE username = '$user' AND active = '1'" );
 			$results = $query->fetch_object();
 			
 			if(tf_check_password( $pass, $results->password, $results->user_id )) {
@@ -76,6 +78,20 @@ class LoginModel {
 			} else {
 				redirect(BASE_URL . 'error/login');
 			}
+		}
+	}
+
+	public function resetPass($data) {
+		$pass = $this->_val->generate_user_password();
+		$hash = tf_hash_password($pass);
+		$email = $this->_db->escape($data['email']);
+		$q = $this->_db->query( "SELECT * FROM ".TP."users WHERE email = '$email'" );
+		if($this->_val->is_valid_email($data['email']) == false || $q->num_rows <= 0) {
+			redirect(BASE_URL.'error/forgot');
+		} else {
+			$this->_db->query( "UPDATE ".TP."users SET password = '$hash' WHERE email = '$email'" );
+			$this->_email->tf_reset_pass($email,$pass,$_SERVER['HTTP_HOST']);
+			redirect(BASE_URL.'login/confirm');
 		}
 	}
 

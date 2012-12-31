@@ -35,7 +35,8 @@
 	$hook = new \tinyPHP\Classes\Libraries\Hooks();
 	
 	foreach($this->topic as $key => $value) {
-		$cache = new \tinyPHP\Classes\Libraries\Cache('1800', BASE_PATH . 'tmp/cache/', $value['topic_id'].'topic');
+		$value['topic_subject'] = str_replace(" ", "", $value['topic_subject']);
+		$cache = new \tinyPHP\Classes\Libraries\Cache($hook->get_option('cacheTTL'), BASE_PATH.'tmp/cache/', $value['topic_subject']);
 	}
 	
 	if(!$cache->setCache( $hook->get_option('cache') )) :

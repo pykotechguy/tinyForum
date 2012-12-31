@@ -1,7 +1,7 @@
 <?php if ( ! defined('BASE_PATH') ) exit('No direct script access allowed');
 /**
  *
- * Register Success View
+ * Activate Confirmation View
  *  
  * PHP 5
  *
@@ -20,6 +20,6 @@
 
 <div class="success-obj">
 	<div class="box01">
-	<span class="s1"><?php _e( _t( 'Success' ) ); ?></span><?php _e( _t( 'Thank you for registering. The next step is to check your email in order to activate you account.' ) ); ?> 
+	<span class="s1"><?php _e( _t( 'Confirmation' ) ); ?></span><?php _e( _t( 'Your account is active. You may now login with your username and password.' ) ); ?>
 	</div>
 </div>

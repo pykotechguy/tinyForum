@@ -1,7 +1,7 @@
 <?php if ( ! defined('BASE_PATH') ) exit('No direct script access allowed');
 /**
  *
- * Register Success View
+ * Account Activation Error View
  *  
  * PHP 5
  *
@@ -18,8 +18,8 @@
  */
 ?>
 
-<div class="success-obj">
+<div class="error-obj">
 	<div class="box01">
-	<span class="s1"><?php _e( _t( 'Success' ) ); ?></span><?php _e( _t( 'Thank you for registering. The next step is to check your email in order to activate you account.' ) ); ?> 
+	<span class="s1"><?php _e( _t( 'Error' ) ); ?></span> <?php _e( _t( 'There was an error in activating your account. The activation code or the username does not exist.' ) ); ?> 
 	</div>
 </div>

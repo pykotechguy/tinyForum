@@ -16,7 +16,7 @@
  * @since tinyForum(tm) v 0.1
  * @license MIT License (http://www.opensource.org/licenses/mit-license.php)
  */
-	
+
 	function isUserFieldEmpty($id,$field) {
  		$db = new \tinyPHP\Classes\Core\MySQLiDriver();
 		$db->conn();
@@ -163,11 +163,11 @@
 		$db->conn();
 		
 		$sql = $db->query( "SELECT * FROM ".TP."users WHERE regdate >= CURDATE() - INTERVAL 1 WEEK" );
-		
 		if($sql->num_rows > 0) {
-			while($r = $sql->fetch_array()) {
-				return '<a href="'.BASE_URL.'index/user/'.$r['user_id'].'">'.$r['username'].'</a>, ';
+			while($r = $sql->fetch_assoc()) {
+				$array[] = $r;
 			}
+			return $array;
 		} else {
 			echo 'None';
 		}

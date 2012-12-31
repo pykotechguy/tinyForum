@@ -23,18 +23,15 @@ $hook = new Action;
 
 <!-- /.Start of reply object -->
 <div class="reply-obj">
-	<div class="t1"><?php _e( _t( 'Login' ) ); ?></div>
+	<div class="t1"><?php _e( _t( 'Reset Password' ) ); ?></div>
 	<div class="t2"></div>
 	<div class="box01">
-		<form method="post" action="<?php echo BASE_URL; ?>login/run">
-		<?php $hook->do_action('login_form_top'); ?>
-		<div><?php _e( _t( 'Username:' ) ); ?> <input class="text" name="username" /></div>
-		<div><?php _e( _t( 'Password:' ) ); ?> <input type="password" class="text" name="password" /></div>
-		<div><?php _e( _t( 'Remember Me:' ) ); ?> <input type="checkbox" name="remember" /></div>
-		<div><a href="<?php echo BASE_URL; ?>login/forgot"><?php _e( _t( 'Reset Password' ) ); ?></a></div>
-		<?php $hook->do_action('login_form_bottom'); ?>
+		<form method="post" action="<?php echo BASE_URL; ?>login/resetPass">
+		<?php $hook->do_action('reset_form_top'); ?>
+		<div><?php _e( _t( 'Email:' ) ); ?> <input type="text" class="text" name="email" /></div>
+		<?php $hook->do_action('reset_form_bottom'); ?>
 		<div class="cols1 clearfix">
-			<div class="col3"><input class="a2" type="submit" value="<?php _e( _t( 'Login' ) ); ?>" /></div>
+			<div class="col3"><input class="a2" type="submit" value="<?php _e( _t( 'Reset' ) ); ?>" /></div>
 		</div>
 		</form>
 	</div><!-- /.box01 -->

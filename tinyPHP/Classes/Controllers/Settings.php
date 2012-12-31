@@ -56,6 +56,7 @@ class Settings extends \tinyPHP\Classes\Core\Controller {
 							'cookieexpire',
 							'cookiepath',
 							'cache',
+							'cacheTTL',
 							'facebook',
 							'flickr',
 							'googleplus',

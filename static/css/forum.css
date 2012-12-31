@@ -526,6 +526,10 @@ div.avatar {
 .offline {
 	display:inline-block;height:16px;line-height:16px;padding:0 5px;font-size:9px;font-weight:bold;text-transform:uppercase;color:#fff;-moz-border-radius:4px;-webkit-border-radius:4px;border-radius:4px;vertical-align:middle;background:#484949;
 }
+
+#settings div {
+	margin:0px 0px 10px 0px;
+}
 /*
 div.blocks1{width:px;}
 div.blocks1 div.block1{width:px;}

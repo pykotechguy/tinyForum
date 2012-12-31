@@ -25,11 +25,23 @@ class Register extends \tinyPHP\Classes\Core\Controller {
 
 	public function __construct() {
 		$this->_auth = new \tinyPHP\Classes\Libraries\Cookies();
-		
 		if($this->_auth->isUserLoggedIn()) { redirect(BASE_URL); }
-		
 		parent::__construct();
 		ob_start();
+	}
+	
+	public function active() {
+		$this->view->staticTitle = array('Account Already Active');
+		$this->view->render('header/index',true);
+		$this->view->render('register/active',true);
+		$this->view->render('footer/index',true);
+	}
+	
+	public function confirm() {
+		$this->view->staticTitle = array('Activate Account Confirmation');
+		$this->view->render('header/index',true);
+		$this->view->render('register/confirm',true);
+		$this->view->render('footer/index',true);
 	}
 	
 	public function index() {
@@ -48,9 +60,16 @@ class Register extends \tinyPHP\Classes\Core\Controller {
 	
 	public function run() {
 		$data = array();
+		$data['md5'] = md5($_POST['username']);
 		$data['username'] = $_POST['username'];
 		$data['password'] = $_POST['password'];
 		$data['email'] = $_POST['email'];
+		$data['regdate'] = date('Y-m-d H:i:s');
+		$data['activation_code'] = rand(1000,9999);
 		$this->model->save($data);
+	}
+	
+	public function activate($id) {
+		$this->model->activate($id);
 	}
 }

@@ -13,12 +13,16 @@ INSERT INTO `{dbprefix}options` (`option_id`, `option_name`, `option_value`) VAL
 
 INSERT INTO `{dbprefix}options` (`option_id`, `option_name`, `option_value`) VALUES(6, 'cookiepath', '/');
 
-INSERT INTO `{dbprefix}options` (`option_id`, `option_name`, `option_value`) VALUES(7, 'facebook', '');
+INSERT INTO `{dbprefix}options` (`option_id`, `option_name`, `option_value`) VALUES(7, 'cache', 'Yes');
 
-INSERT INTO `{dbprefix}options` (`option_id`, `option_name`, `option_value`) VALUES(8, 'flickr', '');
+INSERT INTO `{dbprefix}options` (`option_id`, `option_name`, `option_value`) VALUES(8, 'cacheTTL', '1800');
 
-INSERT INTO `{dbprefix}options` (`option_id`, `option_name`, `option_value`) VALUES(9, 'googleplus', '');
+INSERT INTO `{dbprefix}options` (`option_id`, `option_name`, `option_value`) VALUES(9, 'facebook', '');
 
-INSERT INTO `{dbprefix}options` (`option_id`, `option_name`, `option_value`) VALUES(10, 'twitter', '');
+INSERT INTO `{dbprefix}options` (`option_id`, `option_name`, `option_value`) VALUES(10, 'flickr', '');
 
-INSERT INTO `{dbprefix}options` (`option_id`, `option_name`, `option_value`) VALUES(11, 'vimeo', '');
+INSERT INTO `{dbprefix}options` (`option_id`, `option_name`, `option_value`) VALUES(11, 'googleplus', '');
+
+INSERT INTO `{dbprefix}options` (`option_id`, `option_name`, `option_value`) VALUES(12, 'twitter', '');
+
+INSERT INTO `{dbprefix}options` (`option_id`, `option_name`, `option_value`) VALUES(13, 'vimeo', '');

@@ -25,10 +25,24 @@ class Error extends \tinyPHP\Classes\Core\Controller {
 		parent::__construct();
 	}
 	
+	public function activate() {
+		$this->view->staticTitle = array('Account Activation Error');
+		$this->view->render('header/index',true);
+		$this->view->render('error/activate',true);
+		$this->view->render('footer/index',true);
+	}
+	
 	public function category() {
 		$this->view->staticTitle = array('Forum Error');
 		$this->view->render('header/index',true);
 		$this->view->render('error/category',true);
+		$this->view->render('footer/index',true);
+	}
+	
+	public function forgot() {
+		$this->view->staticTitle = array('Reset Password Error');
+		$this->view->render('header/index',true);
+		$this->view->render('error/forgot',true);
 		$this->view->render('footer/index',true);
 	}
 	

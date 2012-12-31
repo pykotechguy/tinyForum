@@ -136,9 +136,15 @@ class Cache {
 	 * @return mixed
 	 */
 	public function getCache($cache = 'Yes') {
+		$mtime = microtime();
+   		$mtime = explode(" ",$mtime);
+   		$mtime = $mtime[1] + $mtime[0];
+   		$endtime = $mtime;
+   		$totaltime = ($endtime - $this->_starttime);
 		if($cache == 'Yes') :
 			if(!$this->isCacheValid($this->_cachefile)) {
 				$output = ob_get_contents();
+				$output .= "<!-- This MegaCache file was built for ( " . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI'] . " ) in " . $totaltime . " seconds, on " . gmdate("M d, Y") . " @ " . gmdate("H:i:s A") . " UTC. -->";
 				ob_end_clean();
 				$this->writeCache($output, $this->_cachefile);
 			} else {
@@ -209,7 +215,7 @@ class Cache {
    		$mtime = $mtime[1] + $mtime[0];
    		$endtime = $mtime;
    		$totaltime = ($endtime - $this->_starttime);
-   		return "<!-- This cache file was built for ( " . $_SERVER['SERVER_NAME'] . " ) in " . $totaltime . " seconds, on " . gmdate("M d, Y") . " @ " . gmdate("H:i:s A") . " UTC. -->"."\n"; 
+   		return "<!-- MegaCache if fully functional. A MegaCache file was just served for ( " . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI'] . " ) in " . $totaltime . " seconds, on " . gmdate("M d, Y") . " @ " . gmdate("H:i:s A") . " UTC. -->"."\n"; 
 	}
 	
 	/**

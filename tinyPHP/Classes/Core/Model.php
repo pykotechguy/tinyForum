@@ -17,7 +17,7 @@
  * @license MIT License (http://www.opensource.org/licenses/mit-license.php)
  */
 
-if ( ! defined('BASE_PATH')) exit('No direct script access allowed');
+if ( ! defined('BASE_PATH') ) exit('No direct script access allowed');
 
 abstract class Model {
 	abstract protected function conn();

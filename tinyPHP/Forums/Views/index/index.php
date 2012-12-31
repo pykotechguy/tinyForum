@@ -19,6 +19,10 @@
 
 $auth = new \tinyPHP\Classes\Libraries\Cookies();
 $update = new \tinyPHP\Classes\Libraries\Update();
+$hook = new \tinyPHP\Classes\Libraries\Hooks();
+$cache = new \tinyPHP\Classes\Libraries\Cache($hook->get_option('cacheTTL'), BASE_PATH.'tmp/cache/', 'forums');
+	
+	if(!$cache->setCache( $hook->get_option('cache') )) :
 ?>
 	<!-- Start breadcrumb -->
 	<div class="breadcrumb">
@@ -150,7 +154,7 @@ $update = new \tinyPHP\Classes\Libraries\Update();
 					</div>
 					<div>
 						<?php _e( _t( 'Welcome to our newest member(s)' ) ); ?> 
-						<?php echo newMember(); ?>
+						<?php foreach(newMember() as $k => $v) echo '<a href="'.BASE_URL.'index/user/'.$v['user_id'].'">'.$v['username'].'</a>, '; ?>
 					</div>
 					<div>
 						<?php _e( _t( 'Latest Forum Topic:' ) ); ?> 
@@ -165,3 +169,4 @@ $update = new \tinyPHP\Classes\Libraries\Update();
 	</div><!-- /.cat -->
 </div><!-- /.going-obj -->
 <!-- End whats going on object -->
+<?php endif; echo $cache->getCache( $hook->get_option('cache') );
