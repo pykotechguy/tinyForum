@@ -23,11 +23,12 @@ class Category extends \tinyPHP\Classes\Core\Controller {
 	
 	private $_auth;
 
-	public function __construct() {
+	public function __construct() {		
 		parent::__construct();
 		ob_start();
 		
 		$this->_auth = new \tinyPHP\Classes\Libraries\Cookies();
+		if($this->_auth->getUserField('role') != 'Administrator') { redirect(BASE_URL); }
 	}
 	
 	public function index() {}
