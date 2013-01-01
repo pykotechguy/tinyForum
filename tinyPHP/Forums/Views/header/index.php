@@ -18,6 +18,7 @@
  */
  
 ob_start();
+use \tinyPHP\Classes\Libraries\Menu as menu;
 use \tinyPHP\Classes\Libraries\Cookies as Auth;
 use \tinyPHP\Classes\Libraries\Hooks as Action;
 $hook = new Action;
@@ -81,17 +82,18 @@ $auth = new Auth;
 		<ul class="menu">
 			<li class="item01"><a href="<?php echo BASE_URL; ?>"><span><?php _e( _t( 'Home' ) ); ?></span></a></li>
 			<li class="item02"><a class="parent" href="#"><span><?php _e( _t( 'Browse All Pages' ) ); ?></span></a>
-			<ul>
-				<li><a href="<?php echo BASE_URL; ?>"><?php _e( _t( 'Forum Home' ) ); ?></a></li>
-				<?php if($auth->isUserLoggedIn()) { ?>
-				<?php if($auth->getUserField('role') == 'Administrator') { ?>
-				<li><a href="<?php echo BASE_URL; ?>settings"><?php _e( _t( 'Forum Settings' ) ); ?></a></li>
-				<li><a href="<?php echo BASE_URL; ?>category/create"><?php _e( _t( 'Create a forum' ) ); ?></a></li>
-				<?php } ?>
-				<li><a href="<?php echo BASE_URL; ?>profile"><?php _e( _t( 'Edit Profile' ) ); ?></a></li>
-				<li><a href="<?php echo BASE_URL; ?>topic/create"><?php _e( _t( 'Start a topic' ) ); ?></a></li>
-				<?php } ?>
-			</ul>
+			<?php $menu = menu::factory();
+				$menu->add( _t('Forum Home'), BASE_URL );
+				if($auth->isUserLoggedIn()) :
+					if($auth->getUserField('role') == 'Administrator') :
+				$menu->add( _t('Forum Settings'), BASE_URL.'settings' );
+				$menu->add( _t('Create a Forum'), BASE_URL.'category/create' );
+					endif;
+				$menu->add( _t('Edit Profile'), BASE_URL.'profile' );
+				$menu->add( _t('Start a topic'), BASE_URL.'topic/create' );
+				endif;
+				echo new \tinyPHP\Classes\Libraries\TidyMenu($menu);
+			?>
 			</li>
 		</ul>
 	</div><!-- /.inner -->

@@ -39,7 +39,8 @@
 </script>
 
 <?php if($auth->isUserLoggedIn()) {
-	foreach($this->editTopic as $key => $value) { ?>
+	foreach($this->editTopic as $key => $value) { 
+		if($auth->getUserField('user_id') != $value['topic_by']) redirect(BASE_URL); ?>
 <!-- /.Start of reply object -->
 <div class="reply-obj">
 	<div class="t1"><?php _e( _t( 'Edit topic' ) ); ?></div>
